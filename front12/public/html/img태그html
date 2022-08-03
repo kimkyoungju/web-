@@ -21,11 +21,15 @@
  <!-- ../ : 상위로 이동 
  ../ ../ : 2번 위로 이동 
  -->
- 
- <img alt= "강아지설명" src ="강아지.jpg" width="300">
- 
-  <img alt ="" src="../강아지.jpg" width= "150">
-
-<img alt="태섭이의 멋진 척" src="캡처.jpg." width 50px>
+ <!-- 1.현재html과 사진파일이 동일한 폴더에 있을경우에는 사진 파일명만 표시	 -->
+ <img alt= "강아지설명" src ="캡처.jpg" width="150px">
+ <!-- 2.상위폴더에 사진이 있을경우 -->
+ <img alt ="태섭의 멋진 척" src="../캡처.jpg" width= "10px">
+ <!-- 3.다른 폴더에 사진이 있을경우 -->
+ <img alt ="" src="../강아지.jpg" width= "150px">
+ <!-- 4.절대 경로 : 모든 경로[프로젝트내 파일경로] : 로컬에서 사진 호출 -->
+ <img alt ="" src="../강아지.jpg" width= "70px">
+ <!-- 5.절대 경로 : 모든 경로[서버내 파일 경로] :웹서버에서 사진 호출  -->
+ <img alt="" src="http://localhost:8080/front12/html/강아지.jpg" width=100%>
 </body>	<!-- body e -->
 </html>
