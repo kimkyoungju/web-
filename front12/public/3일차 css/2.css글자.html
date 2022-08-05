@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	
+	/* css주석 */
+	/* 선택자 {속성 :  값 ;} */
+	
+	
+	/*웹폰트 : 폰트설치 없이 웹에서 폰트 가져오기*/
+	
+	oneface {
+    font-family: 'ulsanjunggu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ulsanjunggu.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+	
+	*{/* 모든곳에 적용*/
+		font-family: "궁서" ; /*폰트 : pc설치된 폰트*/ 
+		color: blue;		/*폰트색상*/
+	
+		
+	
+	
+	}
+/*특정태그에 적용*/
+
+
+h3{
+  
+    font-family: 'HSGyeoulNoonkott20'; /*웹폰트적용*/
+    text-decoration: overline line-through underline;
+						/* 윗줄 	취소선 		밑줄*/
+
+	text-align: center; /*폰트 정렬 left center right*/
+ 	text-shadow: -10px -10px 4px yellow; /*그림자 */
+			/*		x축  y축 깊이   색상 */
+ 	
+ 
+}	
+
+p{
+	background-color: yellow; /*배경색*/
+	line-height: 150%; /*줄간격 [기본은 100 일반적으론 102~150 정도가 적당]*/
+	font-size: 15px; /*폰트크기*/
+	font-style: italic; /*폰트기울기*/
+	font-weight: bold; /*폰트 굴게*/
+	letter-spacing: 2px; /*글자간격[자간 ]*/
+	word-spacing: 5px;/*단어간격 [어간]*/
+	
+	/*특정태그에 기본값css적용*/
+	
+	
+
+}
+
+a{text-decoration:  none;
+		color: blue; /} /*밑줄제거*/
+
+a:hover{ color: orange;/* a태그에 마우스를 올렸을때 이벤트 */
+}
+a:visited{ /* 한번 이상 a태그를 방문한적이 있을때*/
+         color : ;}
+
+a:active { color: green; /* a태그를 마우스를 클릭했을때 이벤트 */	
+}
+</style>
+
+
+
+</head>
+<body>
+<!-- 글자/ 폰트 관련 속성
+		1. font-family :폰트명
+		2.color :글꼴색
+		3.background-color :배경색
+		4.font-size :폰트크기
+		5.font-style :italic [폰트기울기]
+		6.font-wewight : bold [폰트굵게]
+		7.text-decoration : 
+			over line :윗줄
+			under line :밑줄 
+			line-through : 취소선
+		8.text- align:
+				center 가운데 정렬
+				left: 왼쪽 정렬
+				right : 오른쪽 정렬
+		9. text-shadow : x축y축 흐임도 색상
+		10. line-height : 줄간격[%]
+		11.letter-spacig : 자간
+		12.word- spacig :어간
+			
+		부트스트랩 
+			
+		-->
+
+<h3>갱얼쥐
+
+<p>
+도다 선생님의 일관된 삶의 자세였다.
+'오늘의 용기 내일의 희망' 
+-이케다 다이사쿠- 
+
+교통사고에 주의 !!
+과속이나
+"하면서 운전"은 엄금.
+마음의 틈이나 방심을 배제하고
+안전 제일로 행동을 !!
+**나의 友에게 드린다**
+
+자신이 바뀌면, 환경도 극적으로 바뀐다.  
+그것이 '인간혁명' 의 법칙이다. 
+결코 지지 않겠다 !! 
+</p>
+
+
+
+<a href="http://www.naver.com">네이버</a>
+		<!-- 네이버 회사{웹서버}에게 thml주세요 -->
+
+<!-- http : 하이퍼텍스트 전송 프로토콜 [html전송방식] 
+	//프로토콜[규약]
+	//경기도 안산시 수 동
+    http: 주소
+    도메인(dns)
+    http://ip주소/port ->문자 
+
+
+-->
+
+</h3>
+
+
+
+</body>
+</html>
