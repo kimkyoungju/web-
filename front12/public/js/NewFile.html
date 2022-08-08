@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+const 커피 = [1,2,3,4,5,6,7,8,9,10]
+console.log(커피)
+
+커피.push(커피[0]+".나이트로콜드브루")
+커피.push(커피[1]+".나이트로바닐라크림")
+커피.push(커피[2]+".돌체콜드브루")
+커피.push(커피[3]+".바닐라크림콜드브루")
+커피.push(커피[4]+".벨벳다크모카나이트로")
+커피.push(커피[5]+".시그니처더블랙콜드브루")
+커피.push(커피[6]+".제주비자림콜드브루")
+커피.push(커피[7]+".콜드브루")
+커피.push(커피[8]+".콜드브루몰트")
+커피.push(커피[9]+".콜드브루오트라떼")
+커피.push(커피[10]+".콜드브루플로트")
+console.log("커피종류:" +커피)
+console.log("커피선택:" +커피[0],커피[2],커피[9])
+커피.splice([6])
+console.log(" 커피 장바구니:" + 커피)
+
+/*
+ /p.168 요소추가하기 전 52,103,32
+//52와 103 사이에 " 80" 요소 추가
+커피.splice(1,0,80)
+	console.log("1번 인덱스의 요소 추가 후 :" +커피)*/
+	
+</script>				
+
+</body>
+</html>
