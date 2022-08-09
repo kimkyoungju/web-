@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+*{font-family: "돋음체";}
+
+h3{text-align: center;}
+.main{
+	margin: 0 auto;
+	width:350px;
+}input{height: 25px;}
+
+button {padding: 22px 20px;
+	
+}
