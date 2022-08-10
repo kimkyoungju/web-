@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 변수/상수 :let/const
+		배열 : []
+		제어문 : if/switch
+		반복문 : 
+			*조건이 충족(true이면 실행
+			*값을 1.어디서부터 2.어디까지 몇개씩 3.증감 반복
+		 1.for(기초값 ; 조건문;증감식/while(조건문){실행문}
+		 2.
+		 	1.기초값
+		 	while (2.조건문){
+		 	3.증감식
+		 	}
+		 contiune : 반복문을 올림 
+	 -->
+		<script type="text/javascript">
+		/*
+		//p.181 :무한반복문
+		let i=0			//i라면 변수를 선언해서 0을대입
+		while(true){//조건이 true이면 실행인데 true라는 상수를 넣으면 무조건 실행
+			alert(`${i}번째 반복입니다.`)	//alert(메시지) 경고메시지 함수
+				i = i + 1
+		}
+		*/
+		
+		/* //182
+		let i = 0
+		while(confirm('계속 진행하시겠습니까?')){ //무한루프 [종료조건 : confirm 에서 취소 선택]
+			//confirm(메시지) 확인/취소 선택함수
+		 alert(`${i}번째 반복입니다.`)
+			i = i + 1
+		}//while end
+		 */
+		//183
+		/* let i = 0 //변수
+		const array = [1,2,3,4,5,] //배열 선언과 동시에 1~5대입//
+			//배열명.length : 배열내 요소의 개수 [배열의 길이]
+		while(i<array.length){ // i < 5
+			console.log(`${i}인덱스 : $ {array[i]}`)
+			i++
+		}//while e
+		
+		
+		//vs
+		for(let i = 0; i<array.length ; i++){//i는 0부터 배열의 길이 미만 까지 [5]1씩증가}
+		 */
+		
+		//  //p.184
+      
+      //for( let i + 0 ; ture ; i++) { }   vs   while(true){}
+      /* for(let i = 0 ; ture ; i ++){//무한루프[종료조건 : 취소버튼을 눌렀을때]
+    	  alert( i + '번째입니다')
+    	  const isdontinue = confirm('계속 하시겠습니까?')
+    	  
+    	  if( !iscontinue){break}
+    	  //!연산자 :  부정연산자[true - > false/false ->true]   
+    	  }//while
+		 while( true ){
+			alert( i + '번째 반복입니다.')
+			const isdontinue = confirm('계속 하시겠습니까?')
+			if( !iscontinue){break}
+		 } */
+		/*  //185
+		 for(let i = 0 ; i < 5 ; i++){
+			 continue
+			 alert(i)
+		 }
+		 //185.2
+		 let output = 0
+		 for( let i = 1; i<=10; i++){
+			 if (i % 2 == 1 ){ continue} //홀수 찾기 [값%2 == 1 홀수/값%2 == 0]
+		 	output += i //누적 더하기 : i값을 output변수에 누적더하기
+		 }//end
+		 alert('1~10 짝수 누적합 : ' + output) */
+		 
+		 //191.1	forin 배열 인덱스 반복 ,for of 배열 : 값을 반복
+		 	/* 0
+		 	1
+		 	2
+		 	3
+		 	사과
+		 	배
+		 	귤
+		 	바나나 */
+		 	
+		 	//192.2오류-> for (const i ) x for(let i) o 
+		 	/* o +1 *3=3/1+1*3=6/ 2+1*3=9 예상 {3,6,9} */
+		 	//192.3 1~100까지 곱한값을 
+		 	let output = 1
+		 	for (let i = i ; 1<=100; i++){//i는 1부터 100까지 1씩증가
+		 		output *= i //
+		 	}
+		 	console.log(`1~100의 숫자를 모두 곱하면,${output}입니다.`)
+		 	console.log('1~100의 숫자를 모두 곱하면,'+output+'입니다.')
+		 	
+		 	
+		</script>
+		
+</body>
+</html>

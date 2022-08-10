@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+*{border: solid 1px red;}
+
+
+.hi_top{
+	width: 1280px; height: 40px;
+	margin: 0 auto;
+	text-align: right;
+	
+	
+}
+.hd{width:500px; height: 80px; 	
+  	float: left;
+  	
+}.m1{
+	width: 150px; height: 80px;
+	float: left;
+}.m2{
+	width: 150px; height: 80px;
+	float: left;
+}.m3{
+	width: 150px; height: 80px;
+	float: left;
+}.m4{
+	width: 150px; height: 80px;
+	float: left;
+}.m5{
+	width: 150px; height: 80px;
+	float: left;
+}
+.bon{
+	width: 1280px; height: 800px;
+	margin: 0 auto;
+	text-align: center;
+}.b0{
+	
+	
+}
