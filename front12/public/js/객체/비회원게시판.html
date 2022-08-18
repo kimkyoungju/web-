@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style type="text/css">
+		.container{display: flex;}
+		.box{width: 33%; border: 2px solid blue;
+		box-sizing: border-box;
+		height: 1000px;
+		}
+		table { width: 100%; border: 1px solid black; border-collapse: collapse;
+}
+		td,th { border: 1px solid black;}
+		
+		
+		</style>
+	
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="box">
+			<h3>글쓰기 페이지</h3>
+				작성자 : <input type="text" id="bweiter"> <br>
+				비밀번호 : <input type="text" id="bpassword"> <br>
+				제목 : <input type="text" id="btittle"> <br>
+				내용: <textarea rows="10" cols="50" id="bcontent"></textarea>
+			 <button onclick="글동록()">글 등록</button>
+		</div>
+		<div class="box">
+			<h3>글목록 페이지</h3>
+			<table id="boardlist">
+				<tr>
+					<td>번호</td>
+					<td>제목</td>
+					<td>작성자</td>
+				</tr>
+				<tr> <th> </th>  <th> </th> <th> </th></tr> 
+			</table>
+		
+		</div>
+		<div class="box">
+			<h3>글보기 페이지</h3>
+				<div id="viewtittle">제목표시위치</div>
+				<div id="viewwriter">작성자표시위치</div>
+				<div id="viewcontent">내용표시위치</div>
+				<button onclick="삭제()">삭제</button>
+		</div>
+			
+	</div>
+
+	<script src="비회원게시판.js"></script>
+
+</body>
+</html>
