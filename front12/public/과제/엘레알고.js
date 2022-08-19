@@ -1,11 +1,12 @@
 
-
-
+let 위치 =''
+let 엘베층=''
 let select_numbers = [ ] //내가 선택한 번호 리스트 //여러곳에서 호출(사용) 예정이기 때문에
 let lotto_numbers = [ ] //컴퓨터난수
  //1. 버튼 만들기 함수
  function btn_print( ){
 	let btnlist = '' 
+	엘베층 = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
 	for(let i = 1; i<=20; i++){
 		
 		btnlist += `<button id=${i} onclick=btn_click(${i})>${i}</button>`
@@ -58,11 +59,20 @@ function lotto_number(){
 		//결과함수 출력
 		lotto_result()
 }
-
-
-
-
-
+//만약 엘베의 층이 나보다 높으면 감소
+function 엘베(){
+		for(let i = 1; i==21 ; i++){
+			if(엘베층[i] !=null){
+				위치+=`<button id=${i} onclick="버튼선택(${i})">${i}</button>`
+				alert(i+'증가합니다')
+			}
+				
+		}document.getElementById('위치()').innerHTML = []
+				위치[i]= []
+	}
+	
+	
+	
 
 
 

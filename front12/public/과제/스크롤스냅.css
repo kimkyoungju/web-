@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+*{scroll-snap-type: y proximity;
+font-family: 'Rubik Distressed', cursive;}
+
+.m1 img{ width:10rem;
+	position: fixed;
+	left: 30px;
+	top: 40px;
+}
+section {
+	scroll-snap-align: start;
+	height : 100vh;
+	background-size: cover; 
+	background-position: center center;
+					
+	background-repeat: no-repeat;
+	height: 70vh; 
+}
+.tittle{ 
+	font-size: 5rem;
+	margin-bottom: 10rem;
+	padding-right: 28px;
+	color: #956339;
+	
+}
+.hd p{
+    
+	text-align: right;
+	  margin-top: 43rem;
+	 color: #426977;
+	 font-size: 15px;
+	padding-right: 30px;
+}
+
+.m1{scroll-snap-align : start;
+	background-image: url("조던디올.jpg");
+	height: 100vh;
+	text-align: center;
+	background-size: cover;
+}
+.m2{scroll-snap-align : start;
+	background-image: url("트레비스.jpeg");
+	height: 100vh;
+	text-align: center;
+	background-size: cover;
+}
+.m3{scroll-snap-align : start;
+	background-image: url("오화.jpg");
+	height: 100vh;
+	text-align: center;
+	background-size: cover;
+}
+.m2 p{
+	color: #956339;
+	font-size: 20px;
+}
+.m3 p{
+	color: #6699FF;
+	font-size: 20px;
+}

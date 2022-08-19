@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+
+.container {
+	overflow: auto;
+	scroll-snap-type: y mandatory; /* y축에 스크롤 스냅 적용*/
+	height: 100vh;
+}
+
+section {
+	scroll-snap-align: start; /*스크롤이 멈추는 지점*/
+	height : 100vh; /*vh: 뷰포트 높이*/
+	background-size: cover; /*화면의 비율유지 -> 전체화면 채우기*/
+	background-position: center center;
+	/* 가로   세로 정열*/
+	background-repeat: no-repeat;
+	height: 100vh; /*자동 채우기 제거*/
+}
+
+.hero {
+	background-image: url("이미지/반응형.jpg"); /*배경이미지*/
+	text-align: center;
+	padding-top: 10vh;
+}
+.menu{
+	background-image: url("이미지/빵빵2.jpg");
+	display: flex;
+	align-items: center; /*모델 세로 정렬 배치*/
+}
+.wrapper{
+	width : 900px;
+	margin: 0 auto;
+}
+.menulist tr{
+	margin-bottom: 5px;
+	line-height: 2;
+}
+
+/*__________________3구역*/
+.contact{
+	background-image: url("이미지/빵빵1.jpg");
+	text-align: center;
+}
+
+.contactsns{
+	display: flex;
+	justify-content: center;
+}
+
+
+
+
+.fa-square-facebook{
+	color: red;
+	
+}
+
+.title{
+	font-family: 'Rubik Distressed', cursive; /*구글 웹폰트*/
+	font-size: 7rem;
+	margin-bottom: 2rem;
+}
+
+
+
+/*미디어쿼리 : 디바이스 크기에 따라 css적용*/
+@media ( max-width :700px) {
+	.tittle {
+		font-size: 4rem;
+		color: blue;
+	}
+}
