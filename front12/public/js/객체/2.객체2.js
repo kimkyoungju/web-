@@ -58,11 +58,11 @@ const pet2 ={
 pet2.eat('밥')
 
 // 문제 1
-const 객체={}
+/*const 객체={}
 	name : '혼자하는 파이썬',
 	price : 18000,
 	publisher : 한빛미디어
-	
+	*/
 	
 //문제 4.
 	
