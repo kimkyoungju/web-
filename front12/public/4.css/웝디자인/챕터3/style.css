@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/*미디어쿼리:디바이스 크기에 따라 css설정*/
+
+.post_tittle{
+	 padding-bottom: 10px; /* 아래 양쪽 여백 */
+   background-image: linear-gradient(45deg, #fff 30%, #ccc 30%, #ccc 50%, #fff 50%, #fff
+80%, #ccc 80%, #ccc 100%);
+   background-size: 6px 6px;
+   margin-bottom: 1.5rem;
+	 
+}
+.post_tittle h2{
+	background-color: #ffffff;
+	padding: 0 0.5rem .875rem;
+	font-size: 1.5rem; /*폰트 사이즈*/
+	font-family: '굴림'; /*폰트*/
+	font-weight: 500; /*폰트 굵기*/
+	line-height: 1.5; /*줄간격*/
+}
+.post_tittle a{
+	color: #949087;
+	text-decoration: none;
+}
+.post-img{
+	width: 100%;
+	height: 260px; /*고정높이 -> 비율이 꺠짐 */
+	object-fit:cover;
+	border-radius: 40% 70% 50% 30%/50%; 
+				/*각각의 가로  /세로:50%통일 */
+}
+.post-thumb{
+	position: relative;
+}
+.btn a{
+	color: #fff; /*글자색*/
+	padding:  10px 20px;	/*안쪽여백: 가로세로*/
+	background-color: #eda1a1; /*배경색*/
+				/*그림자 : 1.box-shadow 2. */
+	box-shadow: 0 0 0 5px #eda1a1;
+	
+	border:  2px dashed #e38787;
+	border-radius: 5px;
+	text-decoration: none;
+	display: inline-block;
+}
+.btn a:hover {
+	color: #fff;
+	background-color: #e38787;
+	box-shadow:  0 0 0 5px  #e38787;
+	border: 2px dashed #eda1a1;
+}
+.article ul li::before {
+	content : '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #93d8d0;
+	display: inline-block;
+	margin: 0 8px 2px 0;
+}
+
+@media(min-width : 600px){
+
+		.container{
+			display: flex;
+			justify-content: space-between; /*양쪽 2개니까 끝으로*/
+			
+		}
+		main{width: 68%;}
+		aside{width: 26%;}
+		.post-img{width: 220px; height: 180px;} /*이미지 고정사이즈 -> 비율이 꺠짐*/
+		.post-thumb{margin :0 3rem 1rem 0;  shape-outside:circle();float: left;}
+		
+		/*
+		min-width :600px :최소가로사이즈600px
+		[600px 이상사용되는 css]
+	
+		max-width : 600px :최대 가로사이즈 600px
+		[600px 이하에서 사용되는 css]
+		min-height :600px :최대세로 사이즈	
+		max-height :600px :최대세로 사이즈	
+		[600px이하에서 사용되는css]
+		*/
+}

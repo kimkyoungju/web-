@@ -4,6 +4,9 @@
 //감소 또는 증가 구현
 // 도착 구현
 
+
+
+let	엘베층=[]
 function 버튼(){
 	let btn_list=''
 	엘베층 =[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]
@@ -13,3 +16,8 @@ function 버튼(){
 	}
 	document.getElementById('btn').innerHTML = btn_list
 }
+function 현재층(i){
+	document.getElementById(i).innerHTML ='선택한층'
+	엘베층[i] = '선택한층'
+}
+
