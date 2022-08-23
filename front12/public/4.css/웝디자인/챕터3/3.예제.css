@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+ul li::before{
+	
+	/* <!-- html에 없는 폰트라--> */
+	content : '\f5d1';
+	font-family:"Font Awesome 5 pro"; 
+	color: #f66;
+	font-weight: 900;
+}
