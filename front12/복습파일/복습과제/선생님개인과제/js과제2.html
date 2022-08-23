@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/*자바 스크립트 1일차 정리
+			
+				1.자료형[number string boolean]
+					1.숫자형 number
+					2.문자형 string
+					3.참형 boolean
+					
+				2. 변수와 상수
+					1. 변수 : 변하는수 (값) 데이터 : let
+					2. 상수 : 고정된 수 (값 )데이터 : const
+					
+				3. 호출 /선언
+					1. console.log () 출력
+					2. alert() 경고
+					3. confirm() 참
+					4. prompt() 입력
+					
+				3. 연산자
+					산술연산자 + - * / %
+					대입연산자  > < <= >=  
+					연산자 += -= /= *=
+					증감연산자 ++ --
+					연결연산자 +
+					불형 연산자 && || !
+					연산자 == !=  
+					
+		*/
+				//문제1)
+					//356789 입력시 호출
+				//문제 2) 
+					//반지름 호출
+				//문제 3
+					//3의 배수 찾기
+				//문제 4 홀짝
+				
+				//문제 5 백분율
+	
+	
+				//문제 1) 
+					let 금액 = prompt('금액입력:')
+					console.log('입력값'+금액)
+					console.log('십만원'+ parseInt((금액/100000))+'장')
+						금액 -= (parseInt(금액/100000)*100000)
+					console.log('만원'+parseInt((금액/10000))+'장')
+						금액 -= (parseInt(금액/10000)*10000)
+					console.log('천원'+parseInt((금액/1000))+'장')	
+				//문제 2)
+					let 반지름=prompt('반지름 입력:')
+					console.log('반지름'+(반지름*반지름*3.14));
+				//문제 3)
+					let 배수1 =prompt('3의배수찾기')
+					console.log('3의배수찾기:'+(배수1%3==0))
+				//문제 4)
+					let 정수1 =prompt('홀/짝입력')
+					console.log('홀짝:'+ (정수1%2==1))  //정수1 나머지 2 는 1이다
+				//문제 5)
+					let 실수1 =prompt('실수1입력')
+					let 실수2 =prompt('실수2입력')
+					console.log('실수2의 실수1을 한값:' +(실수1/실수2)*100+ '%')
+					
+				//완 성 	
+	</script>
+		
+</body>
+</html>

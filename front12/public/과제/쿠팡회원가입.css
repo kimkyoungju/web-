@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 *{
 	margin: 0 auto;
 	text-align: center;
@@ -26,11 +25,10 @@
 	background-color: #fafafa;
 
 }
-
-.bb{height:600px;
+.bb{height:1280px;
 	width : 600px;
 	margin-top: 50px;
-	
+	border: solid 1px red;
 	
 }
 .bb img{
@@ -45,9 +43,6 @@
 	border: 0 none;
 	
 }
-
-
-
 .c{height:40px;
 	text-align: left;	
 	width: 400px;
@@ -55,61 +50,7 @@
 	
 	
 }
-#rde{
-	margin-top: 20px;
-	text-align:center;
-	width:600px;
-	
-	background-color: white;
-	justify-content: space-between;
-	display: flex;
-}
 
-#sup{padding :20px;
-	
-	
-}
-
-.b1{
-	border-radius: 2px;
-	box-sizing: border-box;
-	width: 460px;
-	padding :15px;
-	background-color: #0074e9;
-	
-    box-shadow: inset 0 -2px 0 rgb(0 0 0 / 38%);
-	
-
-	
-}
-.b2{
-	border-radius: 2px;
-	box-sizing: border-box;
-	width: 460px;
-	padding :15px;
-	margin-top:25px;
-	border: solid 1px #dadada;
-	
-    box-shadow: inset 0 -2px 0 rgb(0 0 0 / 38%);
-}
-footer h4{
-	font-size: 3px;
-}
-
-
-
-.ms{
-	width: 50px;
-	
-	color : #dadada;
-	font-size: 20px;
-	border: 0;
-	background-color: transparent;
-	margin-top: 10px;
-}
-.fa-eye{
-	color:  #dadada;
-}
 .fa-envelope{
 	width: 42px;
 	height: 44px;
@@ -128,14 +69,4 @@ footer h4{
 	margin-right: 20px;
 	color: #dadada;
 }
-
-.b_main{
-	color: #0073e9;
-}
-#sup hr{
-	margin: 20px 50px; 
-	
-}
-.b_m2{
-	color: white;
-}
+/*--------------------------로고------------------------*/
