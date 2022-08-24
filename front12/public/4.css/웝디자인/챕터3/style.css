@@ -2,6 +2,47 @@
 
 /*미디어쿼리:디바이스 크기에 따라 css설정*/
 
+
+/*----------------------헤더 -------------*/
+body{
+	color: #949087; font-family: '굴림';
+	background-image: url("고양이미.png");
+	
+}
+header{
+	max-width: 1000px;
+	margin: 2.5rem auto 0;
+	background-image: url("header.svg");
+	background-repeat: no-repeat;	/*자동채우기 제거*/
+	background-size: cover; 	/*배경위치*/
+	height: 170px;
+		}
+.page-tittle{
+font-size: 30px; font-family: '굴림';
+text-align: center;
+margin: 40px 0px; 
+}
+.page-desc{
+	font-size: 10px; text-align: center;
+	margin-top: 10xp;
+}
+/*----------------------------------------*/
+
+/**********************컨테이너**********************/
+.container{
+	
+max-width: 1000px;
+margin: 0 auto;
+background-color: #fff;
+border-radius: 0 0 10px 10px;
+}
+
+
+/***************************************************/
+
+
+
+
 .post_tittle{
 	 padding-bottom: 10px; /* 아래 양쪽 여백 */
    background-image: linear-gradient(45deg, #fff 30%, #ccc 30%, #ccc 50%, #fff 50%, #fff
@@ -159,7 +200,7 @@ article blockquote::after{
 .side_box{
 	border: 1px solid #ccc;		/*기본테두리*/
 	border-radius: 6px;		/*테두리 모서리*/
-	outline: 2px solid red;			/*바깥데투리*/
+	outline: 2px solid #ccc;			/*바깥데투리*/
 	outline-offset: 4px; 		/*기본테두리와 바깥 테두리 간격*/
 	padding: 0.875rem;			
 	margin-bottom :4rem;
