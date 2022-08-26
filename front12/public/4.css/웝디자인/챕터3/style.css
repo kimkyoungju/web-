@@ -224,12 +224,30 @@ article blockquote::after{
 }
 
 
+/*--------------------------------------------------*/
 
-
-
-
-
-
+footer{ 
+	background-color: #949087;
+	text-align: center;
+	padding: 3rem;
+}
+footer ul{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+footer li{
+	margin: 0 12px;
+}
+footer a{
+	color: #fff;
+}
+footer a:hover {
+	color: #c7c3ba;
+}
+footer small{
+	color: #c7c3ba; font-size: .875rem;
+}
 
 @media(min-width : 600px){
 
@@ -242,7 +260,7 @@ article blockquote::after{
 		aside{width: 26%;}
 		.post-img{width: 220px; height: 180px;} /*이미지 고정사이즈 -> 비율이 꺠짐*/
 		.post-thumb{margin :0 3rem 1rem 0;  shape-outside:circle();float: left;}
-		
+		.popular_posts{position: sticky; top:1rem;}
 		/*
 		min-width :600px :최소가로사이즈600px
 		[600px 이상사용되는 css]
