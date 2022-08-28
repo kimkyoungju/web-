@@ -1,0 +1,59 @@
+@charset "UTF-8";
+*{
+	margin: 0 auto;
+	text-decoration: none;
+}
+
+#hd{
+	width: 700px;
+	height: 900px;
+	border: solid 1px red;
+	position: relative;
+}
+
+.cols li{display: inline-block;
+	width: 600px;
+	height: 40px;
+	border: solid 1px red;
+	}
+.cols2 input {
+width: 250px; height: 25px;
+margin-top: 4px;
+}
+ul
+{
+	list-style-type: none;
+}
+
+
+/*----------------------------------------------*/
+
+section{
+	
+	display: inline-block;
+	border: solid 1px red;
+	width: 700px;
+	height: 200px;
+	flex-direction:column-reverse;  
+}
+.cols1,h3{
+	float: left;
+}
+
+.약관{box-sizing:border-box;
+			clear: both;
+			width: 700px;
+			height: 150px;
+	
+}
+.buttom{
+	clear: both;
+	display:inline-block;
+	width: 700px;
+	
+	border: solid 1px red;
+	box-sizing: border-box;
+}
+h1{
+	text-align: center;
+}

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+*{border: solid 1px red;box-sizing: border-box; }
+.container{
+	width: 1500px;
+	margin: 0 auto;
+	height: 1000px;
+}
+.headerbox{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 10%;
+}
+.menu{
+	float: left; width: 250px; height: 80%;
+	border: solid orange 3px; 
+}
+.menu_list{
+	height: 95%;
+}
+.main_content{
+	float: right; width: 1200px; height: 80%; display: flex; flex-direction: column; justify-content: space-between; 
+}
+
+
+/*-------------------------------------------*/
+
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+#hd{
+	box-sizing: border-box;
+	width: 1200px;
+	height: 700px;
+	margin: 0 auto;
+
+}
+
+.cols{
+	width: 600px;
+	border: solid 0 none;
+	margin: 0 auto;
+	}
+.cols2 input {
+width: 250px; height: 25px;
+margin-top: 4px;
+text-decoration: none;
+border: 0 none;
+
+}
+.cols2{
+	border: 1px solid #dadada;
+	width: 300px;
+}
+.col1{
+	margin-left: 30px;
+}
+ul
+{
+	list-style-type: none;
+}
+
+
+
+/*----------------------------------------------*/
+
+section{
+	
+	margin: 0 auto;
+	border: solid 1px red;
+	width: 700px;
+	height:500px;
+	flex-direction:column-reverse;  
+}
+h3{
+	float: left;
+}
+
+
+.약관{box-sizing:border-box;
+			clear: both;
+			width: 700px;
+			height: 100px;
+	
+}
+.buttom{
+	width: 300px;
+	background-color :teal;
+	border: solid 1px red;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+h1{
+	text-align: center;
+}
+
+
+
+
+
+
+
+/*----------------------------------------------------*/
+
+footer{
+	display: flex;
+	justify-content: center;
+	height: 10%;
+	
+	
+	
+}
+.info{margin: 0 12px;}
