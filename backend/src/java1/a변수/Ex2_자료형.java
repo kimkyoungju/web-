@@ -31,7 +31,18 @@ public class Ex2_자료형 {	//c s
 		long 롤변수1 = 1000000000; System.out.println(롤변수1);
 		long 롱변수2 = 3000000000000L; System.out.println(롱변수2 );
 		
-			//1.int : 10진수 정수를 저장하는 자료형 [상자]
+		//실수 타입
+		//1. float		[입력 숫자 뒤에 f] [소수점 7자리]
+		//2. double		[*실수 기본 자료형]	[소수점 15자리]
+		float 실수1 = 3.14f; System.out.println(실수1);
+		double 실수2 =3.14; 	System.out.println(실수2);
+		double 실수3 = 0.123456787912345677124124; 
+			System.out.println(실수3); 			//소수점 17자리 까지만 가능 
+		float 실수4 = 0.12345678923124124f; //소수점 8까지만 가능
+			System.out.println(실수4);
+		
+		
+		//6.int : 10진수 정수를 저장하는 자료형 [상자]
 		int var1 = 0b1011;	//2진수[0b : 2진수 작성 가능]
 		System.out.println("2진수 :"+var1);
 		int var2 =0206;			//8진수
@@ -41,15 +52,41 @@ public class Ex2_자료형 {	//c s
 		int var4 =0xb3;			//16진수
 		System.out.println("16진수 :"+var4);
 		 
+		//논리 타입
+			//1.boolean :true or false
+		boolean 논리변수 = true; System.out.println("논리변수:"+논리변수);
+		
 		
 	}//main e
 }// c e
 /*
 진수
 	*2진수를 다른 진수로 변환해서 다양한 표현 단위 사용 가능 --> 많은 단위를 표현가능 
-	2진수
-	8
-	10 					
-	16					10---->16
+		2진수
+		8
+		10 					
+		16					10---->16
 						
+	용량[저장단위]
+		bit : 0혹은 1					[1bit-> 0혹은 1]
+		byte : bit 8개가 모이면 		[1 byte ->01010101->8bit]
+		kbyte : 1024byte -> 1kbyte
+		mbyte : 1024kb -> 1mb
+		gb : 1024mb -> 1gb
+	자료형
+		*미리 만들어진 변수의 크기 [상자]
+		*효율적으로 저장할 데이터의 변수 크기 선택해서 사용하기
+		1.정수형
+			1.byte		1바이트 +-100정도
+			2.char		2바이트	유니코드[영/한글] 한문자
+			3.short		2바이트 +-3만정
+			*4.int		4바이트 +-20억정도
+			5.long		8바이트 +-20이상정도
+		2.실수형	
+			1.float		4바이트	소수점 8자리 표현
+			*2.double	8바이트	소수점 17자리 표현
+		3.논리타입
+			1.boolean 	1바이트	true,false
 */
+
+
