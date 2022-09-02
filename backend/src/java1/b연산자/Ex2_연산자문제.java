@@ -1,6 +1,7 @@
 package java1.b연산자;
 
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class Ex2_연산자문제 { //c s
 	public static void main(String[] args) { //m s
@@ -41,10 +42,71 @@ public class Ex2_연산자문제 { //c s
 		 */
 		//문제 3
 		
-		System.out.println("정수입력:");
-		int 배수= 급여.nextInt();
-			배수 =7 % 2;
+		/*
+		 * System.out.print("배수입력:"); int 배수= 급여.nextInt(); //입력된 데이터를 인트로 가져옴 String
+		 * 결과3 = 배수 % 7==0 ?"7배수 맞습니다" :"아닙니다"; // 삼항연산자 조건 ? 참 : 거짓
+		 * System.out.println("정수입력:" + 결과3);
+		 * 
+		 * //문제 4
+		 * 
+		 * System.out.println("문제4 ) 정수입력 :"); int 문제4 = 급여.nextInt(); String 결과4 = 문제4
+		 * %2 == 1 ?"홀수" : "짝수"; System.out.println("결과4)" +결과4);
+		 * 
+		 * //문제5 System.out.print("문제5) 정수입력:"); int 문제5 = 급여.nextInt(); String 결과5 =
+		 * (문제5 %7 == 0 && 문제5%2 ==0) ?"참" :"거짓"; System.out.println("결과5)"+결과5); //문제6
+		 * System.out.println("문제6_1) 정수입력 :" ); int 문제6_1 =급여.nextInt();
+		 * System.out.println("문제6_2) 정수입력 : "); int 문제6_2 =급여.nextInt();
+		 * System.out.println("결과6: "+(문제6_1 >문제6_2 ? 문제6_1 :문제6_2));
+		 * 
+		 * 
+		 */
+		/*
+		 * //문제7 System.out.println("문제7) 정수입력 :"); Double 반지름 =급여.nextDouble();
+		 * System.out.println("문제7)" + ((반지름*반지름*3.14)));
+		 */
+		 //문제 8
+			/*
+			 * System.out.println("문제8) 실수입력 : "); double 실수1 =급여.nextDouble();
+			 * System.out.println("문제8_2) 실수입력2: "); double 실수2 = 급여.nextDouble();
+			 * System.out.printf("결과 : %.2f%%" ,(실수1 / 실수2)*100); //문제9
+			 * System.out.println("문제9)윗변 :"); double 윗변 = 급여.nextDouble();
+			 * System.out.println("문제9)밑변 :"); double 밑변 =급여.nextDouble();
+			 * System.out.println("문제9)높이 :"); double 높이 =급여.nextDouble();
+			 * System.out.println("결과 :"+((윗변*밑변)*높이/2));
+			 * 
+			 * //문제10 System.out.println("문제10) 키:"); double 키 = 급여.nextDouble();
+			 * System.out.println("결과:" + ((키-100)*0.9));
+			 */
+		 //문제11
+			/*
+			 * System.out.print("문제11) 키:"); double 키2 =급여.nextDouble();
+			 * System.out.print("문제11) 몸무게:"); double 몸무게 = 급여.nextDouble();
+			 * System.out.printf("BMI :%10.0f" , (몸무게/((키2/100)*(키2/100)))); //문제 12
+			 */		 
+		//문제12
+		System.out.println("문제12) :"); double inch = 급여.nextDouble();
+		System.out.println("결과 : cm : " + (inch*2.54));
+		 
+		//문제13
+		System.out.println("문제13) :"); double 중간고사 = 급여.nextDouble() *0.3;
+		System.out.println("문제13) :"); double 기말고사 = 급여.nextDouble() *0.3;
+		System.out.println("문제13) :"); double 수행평가 = 급여.nextDouble() *0.3;
+		System.out.printf("결과 : %.2f" ,(중간고사+기말고사+수행평가));
 		
+		//문wp14
+		/*
+		1.x 변수에 10 대입한다. x=10
+		2.y 변수에 대입 
+			1. x-- :10 [후위감소 = 가장 나중에 할 예정]
+			2. --x :9 [먼저갑소]
+			3. 10 + 5+ 9 :24
+			4. = [대입 = 이 마지막]
+		    5. x-- : 후위감소이기 때문에 값을 가지고 감소 
+					3. 출력
+			x= 8
+			y= 23
+		
+		*/
 		
 	}//m e
 }//c e
