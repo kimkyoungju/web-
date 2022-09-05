@@ -8,21 +8,22 @@ public class Ex3_틱택토 {
 		//문자 9개 저장하는 배열 선언과 초기값 [처음값]
 		
 		Scanner scanner = new Scanner(System.in); 
-	
+		int 승리자 ='c';
 		String[ ] 게임판 = {"[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"+"\n"};
 		while(true) {
 		for(int i = 0; i<9; i++) {
 		if(i % 3==0){System.out.println();}
 		System.out.print(게임판[i]);
 			}
+
 		
 		while(true) {
 			System.out.print("입력해주세요");int 입력 = scanner.nextInt();
-			if(입력<0|| 입력>8) {System.out.println("깔수없다");}
+			if(입력<0 || 입력>9) {System.out.println("깔수없다");}
 			if(게임판[입력].equals("[ ]")) {게임판[입력] = "[o]"; break;}
 			else {System.out.println("안내 이미 존재하는 위치입니다");}
-		
-			}
+			
+		}
 			// 난수 생성
 			 while(true) {
 				Random 랜덤 = new Random();
@@ -30,17 +31,18 @@ public class Ex3_틱택토 {
 				 if(게임판[난수].equals("[ ]")) {게임판[난수] ="[x]"; break;}
 			}
 			
-			for(int i = 0; i<게임판.length; i++) {
-				if(!게임판.equals("[ ]")&&(게임판.equals("[i]"))==게임판.equals("[i+1]")&&게임판.equals("[i+1]")==게임판.equals("[i+2]")){
-					 
-					System.out.println("승리입니다");
+	
+		for(int i= 0; i<9; i++) {
+			if((게임판[0]=="[o]"&&게임판[1]=="[o]"&&게임판[2]=="[o]")
+			|| (게임판[3]=="[o]"&&게임판[4]=="[o]"&&게임판[5]=="[o]")
+			|| (게임판[6]=="[o]"&&게임판[7]=="[o]"&&게임판[8]=="[o]"))
+				승리자 = 'i';
+				break;
 				}
+			 if(승리자 == 'i') {
+				 System.out.print("알림) 이겨따 내가");
+			 }
 			}
-			 
-		}
-			//승리자 판단
-			
-		
 		
 	}//m e
 }//c e	
@@ -63,4 +65,13 @@ public class Ex3_틱택토 {
 					 [ ] [ ] [ ]
 					 [ ] [ ] [ ]
 	
+while(true) {
+			 for(int i = 0; i<=6; i+=3) {	// 0 1 2 // 3 4 5 // 6 7 8
+					if(!게임판.equals("[ ]")&&(게임판.equals("[i]"))==게임판.equals("[i+1]")&&게임판.equals("[i+1]")==게임판.equals("[i+2]")) {	
+							System.out.println("승리");return;
+						}
+				}
+			}
+*
+*
 */
