@@ -26,7 +26,7 @@ public class Ex781_비회원 {
 				System.out.println("내용"); String 내용 = scanner.next();
 				System.out.println("글쓴이"); String 글쓴이 = scanner.next();
 				System.out.println("비밀번호"); String 비밀번호 = scanner.next();
-					if(배열[i][0]!=null)
+					if(배열[i][0]==null)
 					배열[i][0] = 제목; 
 					배열[i][1] = 내용;
 					배열[i][2] = 글쓴이;
