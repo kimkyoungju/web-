@@ -22,7 +22,14 @@ public class Ex7_비회원제게시판 {
 				
 			}if(작동==2) {
 				System.out.println("=========================");
-				System.out.println("수정이나 삭제를 할려면 비밀번호를 입력하세요"); 
+				System.out.println("수정이나 삭제를 할려면 비밀번호를 입력하세요"); String 비번 = scanner.next();
+				
+				if(main[선택][3].equals(비번))
+					main[i][0] =null;
+					main[i][1] =null;
+					main[i][2] =null;
+					main[i][3] =null;
+				break;
 			}
 				
 				
@@ -36,7 +43,7 @@ public class Ex7_비회원제게시판 {
 					System.out.println("내용 :" +main[i][1]);
 					작동 = 2;
 					}
-				}else {
+				}if(main[i][0] == null){
 					System.out.println("등록된 글이 없습니다.");
 					break;
 				}
@@ -68,7 +75,7 @@ public class Ex7_비회원제게시판 {
 							System.out.println(main[i][2]);
 							System.out.println(main[i][1]);
 						
-							break;
+							
 						
 						}
 					}
