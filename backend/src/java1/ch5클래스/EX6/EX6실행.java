@@ -18,9 +18,11 @@ public class EX6실행 {
 				member signupinfo = new member(id,password,name,1000);
 				int index = 0;
 				for(member temp : memberobject) {
+					index++;
 					if(temp == null) {
 						//temp = signupinfo;
 						memberobject[index] =signupinfo; //원본에 수정
+						//해당 인덱스의 새로운 객체 대입 [객체의 주소값 대입]
 						break;
 					}
 				}
