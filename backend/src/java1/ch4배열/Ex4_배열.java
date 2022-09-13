@@ -1,4 +1,4 @@
-package java1.d배열;
+package java1.ch4배열;
 
 public class Ex4_배열 {
 		public static void main(String[] args) {

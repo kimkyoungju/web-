@@ -1,4 +1,4 @@
-package java1.d배열;
+package java1.ch4배열;
 
 import java.lang.reflect.Array;
 
