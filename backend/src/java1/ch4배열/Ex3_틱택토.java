@@ -8,11 +8,12 @@ public class Ex3_틱택토 {
 		//문자 9개 저장하는 배열 선언과 초기값 [처음값]
 		
 		Scanner scanner = new Scanner(System.in); 
-		int 승리자 ='c';
-		String[ ] 게임판 = {"[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"+"\n"};
+		String 승리자 = "c";
+		String[ ] 게임판 = {"[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]","[ ]"};
+	
 		while(true) {
 		for(int i = 0; i<9; i++) {
-		if(i % 3==0){System.out.println();}
+		if(i % 3 == 0){System.out.println();}
 		System.out.print(게임판[i]);
 			}
 
@@ -22,24 +23,67 @@ public class Ex3_틱택토 {
 			if(입력<0 || 입력>9) {System.out.println("깔수없다");}
 			if(게임판[입력].equals("[ ]")) {게임판[입력] = "[o]"; break;}
 			else {System.out.println("안내 이미 존재하는 위치입니다");}
-			
 		}
+		
+		
+		int 빈공간 = 0;
+		for(int i = 0; i<9; i++) {if( !게임판[i].equals("[ ]") ) 빈공간++;}
+		if( 빈공간 == 9 ) { System.out.println("무승부"); break; }
+		
+		
+		
 			// 난수 생성
 			 while(true) {
 				Random 랜덤 = new Random();
 				int 난수  =  랜덤.nextInt(9);
-				 if(게임판[난수].equals("[ ]")) {게임판[난수] ="[x]"; break;}
+				 if(게임판[난수].equals("[ ]")) {게임판[난수] ="[x]";  break;}
 			}
+			 
 			
-	
-			 for(int i= 0; i<3; i++) {
-					if((게임판[i] !=null && 게임판[i].equals("[o]")==게임판.equals("[i+1]")&&게임판.equals("[i+1]")==게임판.equals("[i+2]")))
-						승리자 = 'i';
+			 for(int i= 0; i<=6; i+=3) { // 0 1 2  
+					if(!게임판[i].equals("[ ]")&&게임판[i]==게임판[i+1]&&게임판[i+1]==게임판[i+2]) {
+						승리자 = "i";
 						break;
-			 		}
-					if(승리자 == 'i') {
-						 System.out.print("알림) 이겨따 내가");
-				}
+			 			}	
+			 }for(int i= 0; i<3; i++) { // 0 1 2  
+					if(!게임판[i].equals("[ ]")&&게임판[i]==게임판[i+3]&&게임판[i+3]==게임판[i+6]) {
+						승리자 = "i";
+						break;
+			 			} 
+			 	}
+			 if(!게임판[0].equals("[ ]")&&게임판[0]==게임판[4]&&게임판[4]==게임판[8]) {
+					승리자 = "i";
+					
+		 			} 
+			 if(!게임판[2].equals("[ ]")&&게임판[2]==게임판[4]&&게임판[4]==게임판[6]) {
+					승리자 = "i";
+		 			} 
+			 for(int i= 0; i<=6; i+=3) { // 0 1 2  
+					if(!게임판[i].equals("[ ]")&&게임판[i]==게임판[i+1]&&게임판[i+1]==게임판[i+2]) {
+						승리자 = "y";
+						break;
+			 			}	
+			 }for(int i= 0; i<3; i++) { // 0 1 2  
+					if(!게임판[i].equals("[ ]")&&게임판[i]==게임판[i+3]&&게임판[i+3]==게임판[i+6]) {
+						승리자 = "y";
+						break;
+			 			} 
+			 	}
+			 if(!게임판[0].equals("[ ]")&&게임판[0]==게임판[4]&&게임판[4]==게임판[8]) {
+					승리자 = "y";
+					
+		 			} 
+			 if(!게임판[2].equals("[ ]")&&게임판[2]==게임판[4]&&게임판[4]==게임판[6]) {
+					승리자 = "y";
+		 			} 
+			 
+			 
+			 if(승리자.equals("i")) {
+				 System.out.print("알림) 이겨따 내가");
+		}else if(승리자.equals("y")) {
+			System.out.println("컴퓨터가 이겨써");
+			}
+			 
 		}
 	
 	}//m e
