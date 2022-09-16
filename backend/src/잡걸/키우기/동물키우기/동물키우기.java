@@ -51,8 +51,9 @@ public class 동물키우기 {
 				if(선택==1){
 					for(int i = 0; i<키우기.length; i++) {
 						if(키우기[0][0]!=null){
+							키우기[0][i] ="ㅁ";
 							키우기[0][i+1] = "■";
-							break;
+							
 						}else {}
 					}
 				} 	
