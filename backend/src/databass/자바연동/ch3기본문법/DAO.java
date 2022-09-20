@@ -262,16 +262,19 @@ public class DAO {
 		} catch (Exception e) {System.out.println("12오류 "+e);}
 		return list;
 	}
-	void 예제13결과() {
+	ArrayList<MemberDto> 예제13결과() {
+		ArrayList<MemberDto> list  = new ArrayList<>();
 		String sql = "select distinct addr from member";
 		
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				MemberDto dto = new MemberDto(rs.getString(1));
-				list.add
+				MemberDto dto = new MemberDto();
+				list.add(rs.getString(1));
+				
 			}
+			return list;
 		} catch (Exception e) {System.out.println("13오류"+e);}
 	}
 	
