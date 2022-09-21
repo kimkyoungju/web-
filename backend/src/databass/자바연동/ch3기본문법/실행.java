@@ -3,7 +3,7 @@ package databass.자바연동.ch3기본문법;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import java1.ch5클래스.EX6.member;
+
 
 
 
