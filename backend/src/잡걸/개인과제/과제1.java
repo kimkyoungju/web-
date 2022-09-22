@@ -1,4 +1,4 @@
-package 개인과제;
+package 잡걸.개인과제;
 
 import java.util.Scanner;
 
