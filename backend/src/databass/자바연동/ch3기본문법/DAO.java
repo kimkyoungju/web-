@@ -271,11 +271,13 @@ public class DAO {
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				MemberDto dto = new MemberDto();
+				
 				list.add(rs.getString(1));
 				
 			}
 			return list;
 		} catch (Exception e) {System.out.println("13오류"+e);}
+		return list;
 	}
 	
 }
