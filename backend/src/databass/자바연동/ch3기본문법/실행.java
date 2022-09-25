@@ -3,6 +3,8 @@ package databass.자바연동.ch3기본문법;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import java1.ch5클래스.EX6.member;
+
 
 
 
@@ -134,13 +136,62 @@ public class 실행 {
 					}
 				}if(ch==12) {
 					ArrayList<MemberDto>list = dao.예제12결과();
-					System.out.println("======예제11======");
+					System.out.println("======예제12======");
 					for(MemberDto dto: list) {
 						System.out.print(dto.mem_name+"\t");
 						System.out.println(dto.height);
 					}
-				}
+				}if(ch==13) {
+					ArrayList<MemberDto>list = dao.예제13결과();
+					System.out.println("======예제13======");
+					for(MemberDto dto : list) {
+						System.out.println(dto.addr);
+					}
 				
+				}if(ch==14) {
+					ArrayList<buydto>list = dao.예제14결과();
+					System.out.println("======예제14======");
+					for(buydto dto : list) {
+						System.out.print(dto.mem_id+"\t");
+						System.out.println(dto.amount);
+						
+					}
+				}if(ch==15) {
+					ArrayList<buydto>list = dao.예제15결과();
+					System.out.println("======예제15======");
+					for(buydto dto : list) {
+						System.out.print(dto.mem_id+"\t");
+						System.out.println(dto.amount);
+					}
+				}if(ch==17) {
+					ArrayList<MemberDto>list = dao.예제17결과();
+					System.out.println("======예제17======");
+					for(MemberDto dto : list) {
+						System.out.print(dto.mem_id+"\t");
+						System.out.println(dto.phone1);
+					}
+				}if(ch==16) {
+					ArrayList<buydto>list = dao.예제16결과();
+					System.out.println("======예제16======");
+					for(buydto dto : list) {
+						System.out.print(dto.mem_id+"\t");
+						System.out.println(dto.amount1);
+					}
+				}if(ch==18) {
+					ArrayList<MemberDto>list = dao.예제18결과();
+					System.out.println("======예제18======");
+					for(MemberDto dto : list) {
+						System.out.print(dto.mem_id+"\t");
+						System.out.println(dto.mem_number);
+					}
+				}if(ch==19) {
+					ArrayList<buydto>list = dao.예제19결과();
+					System.out.println("======예제19======");
+					for(buydto dto : list) {
+						System.out.print(dto.mem_id+"\t");
+						System.out.println(dto.amount);
+					}
+				}
 		}
 	}
 }

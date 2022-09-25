@@ -12,4 +12,6 @@ public resultdto(String mem_id, double val) {
 	this.val = val;
 	}
 }
+
+ 
 //2. 
