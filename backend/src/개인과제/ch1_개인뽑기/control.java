@@ -1,4 +1,4 @@
-package 개인과제.copy;
+package 개인과제.ch1_개인뽑기;
 
 public class control {
 	
