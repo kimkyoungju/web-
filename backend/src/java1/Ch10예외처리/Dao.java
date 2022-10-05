@@ -32,16 +32,16 @@ public class Dao {
 	}
 	//메소드
 	
-	public boolean signup() throws SQLException{
-		String sql = "insert into menu values (null,?)";
-		ps = con.prepareStatement(sql);
-		ps.setString(1, "과자"); // ?: 첫번째 ? 에 변수 대입 
-	 	int result =ps.executeUpdate();
-		if(result == 1) {return true;}
-	}
-	public void login() throws SQLException{
-		String sql = "";
-		ps = con.prepareStatement(sql);
-		ps.executeQuery();
-	}
+//	public boolean signup() throws SQLException{
+//		String sql = "insert into menu values (null,?)";
+//		ps = con.prepareStatement(sql);
+//		ps.setString(1, "과자"); // ?: 첫번째 ? 에 변수 대입 
+//	 	int result =ps.executeUpdate();
+//		if(result == 1) {return true;}
+//	}
+//	public void login() throws SQLException{
+//		String sql = "";
+//		ps = con.prepareStatement(sql);
+//		ps.executeQuery();
+//	}
 }
