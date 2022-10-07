@@ -47,10 +47,8 @@ public class boardin extends HttpServlet {
 		boolean result = dao.board(dto);
 		if(result) {System.out.println("1");}
 		else {System.out.println("등록실패");}
-		
 				
-				
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("등록성공").append(request.getContextPath());
 	}
 
 	/**

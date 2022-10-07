@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/*  
+	식별자{속성 = 값}
+		1.class    .클래스명{}
+		2.id 		#id{}
+		3 name
+		4.태그명
+
+	하위 식별자 선택[띄어쓰기]
+	
+	복수 식별자 선택
+		식별자,식별자,식별자{}
+	n번째 하위 식별자 선택
+		식별자 : nth-child(n)     :복수하위 식별자중 n번째 식별자 선택	
+
+*/
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+	 padding: 0px;
+	text-decoration: none; /*밑줄제거*/
+	list-style: none;  /* 글머리 */
+	color: black;			/* 글색상 */
+	font-family: '맑은 고딕'; /* 글꼴 */
+}
+
+.webbox{
+	width: 1200px;
+	margin: 0 auto;
+}
+.hd_top{
+	display: flex;			/* 자식요소들이 가로배치 */
+	justify-content: space-between; /* 가로배치 */
+	margin: 10px 0px 20px 0px; /* 시계방향 */
+	
+}
+.hd_sub{
+	display: flex;
+	font-size: 12px;
+	align-items:  center;
+}
+.hd_sub li{
+	margin-left:20px; 
+	
+}
+.hd_title a{font-family: 'RixInooAriDuriR'; font-size: 40px;}
+/*-----------하단헤더-----------------------*/
+.hd_menu{display: flex;justify-content: space-between; margin-bottom: 50px;}
+
+.searchbox input{border: none;}/*  테두리제거 */
+
+.searchbox span{ border-bottom: solid 2px black; margin: 0px 20px 0px 150px;}
+
+.fa-search , .fa-shopping-cart{font-size: 20px;}
+
+.hd_menu li:nth-child(1) a{color: red; font-weight: bold; }
+.hd_menu li:nth-child(2) a{color: fuchsia; font-weight: bold; }
+.hd_menu li:nth-child(3) a{color: gray; font-weight: bold; }
+.hd_menu li:nth-child(4) a{color: skyblue; font-weight: bold; }
+/* -------------------------------------------------------------------------
+ */
+ .web1{
+ margin:  0 auto; text-align: center;
+ }
+ .sub{
+ 	display: flex; justify-content: center; padding: 10px;
+ 	
+ }
+ .sub li a{
+	border: solid  1px; 
+	border-radius: 2px;
+	margin: 5px;
+}
+.main{
+	margin: 10px;
+}

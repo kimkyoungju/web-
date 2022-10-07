@@ -8,7 +8,17 @@
 </head>
 <body>
 	
+	<%@include file="header.jsp"  %> <!-- jsp다른파일 옮길때 -->
+			
+			<img alt="" src="img/맥북.PNG" width="100%">
+			
+			<div class="webbox"> 
+				<h1>맥북사줘 안태섭</h1>
+			</div>
 	
-	<h3>메인페이지</h3>
+	
+	
+	
+	
 </body>
 </html>

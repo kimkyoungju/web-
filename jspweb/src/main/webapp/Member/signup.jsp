@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-			
+			<%@include file="../header.jsp"  %>
+			<div class="webbox"> 	
 			<h3>회원가입 페이지</h3>
 				<form action="/jspweb/member/signup" method="post">
 					아이디 		: <input type="text" 		name="mid"> 				<br>
@@ -33,7 +34,7 @@
 				</form>
 				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>			
 				<script type="text/javascript" src="../js/member/signup.js"></script>
-			
+			</div>
 			
 </body>
 </html>
