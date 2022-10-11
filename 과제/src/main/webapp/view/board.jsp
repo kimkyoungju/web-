@@ -5,24 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+	<meta name="viewport" content="width = device-width , inital-scale=1.0">
+
 </head>
 <body>
 
 
 	<h1>비회원제 게시판</h1>
 		
-		<div class="board">
-				제목 : <input type="text" id="title">
-				작성자 : <input type="text" id="writer">
-				내용 : 	<input type="text" id="content">
-				비밀번호 : <input type="password" id="pw"> <br>
-		<button type="button" onclick="insert()">글작성</button>
+		<div>
+			<label>	제목 : <input type="text" id="title"> <br>
+					작성자 : <input type="text" id="writer"><br>
+					내용 : 	<textarea rows="20px" cols="20px" id="content"></textarea><br>
+					비밀번호 : <input type="password" id="pw"> <br>
+			</label>
+		</div>
+			
+		<button type="button" onclick="insert()">글등록</button>
+	
+	
+	<h3>조회할 글 선택</h3>
+	<input type="text">
+	<button type="button" onclick="view()">글조회</button>
+	
 
-	</div>
-	
-	
-	
-	
 	<h3>게시판</h3>
 		<h1>글보기</h1>
 			<ul class="main">
@@ -33,6 +40,8 @@
 				<li id = "date" >작성일 : </li>
 				<li id = "view"> 조회수 : </li>
 			</ul>
+		<h2>삭제하기</h2>	
+		<button type="button" onclick="delete()">글조회</button>	
 		
 	<script src="board.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>

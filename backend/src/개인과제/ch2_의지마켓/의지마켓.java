@@ -45,13 +45,11 @@ public class 의지마켓 {
 					 state[i][2] =  seller;
 					 state[i][3] =  dealarea;
 					 state[i][4] = dealcontent;
-					 
 					 break;
-					
 					}
 				}
 			}
-			else {System.err.println("누를수 없습니다.");}
+			else {System.out.println("누를수 없습니다.");}
 			
 		}//w e
 		
