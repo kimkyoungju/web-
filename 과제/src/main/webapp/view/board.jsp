@@ -10,24 +10,32 @@
 
 
 	<h1>비회원제 게시판</h1>
+		
+		<div class="board">
+				제목 : <input type="text" id="title">
+				작성자 : <input type="text" id="writer">
+				내용 : 	<input type="text" id="content">
+				비밀번호 : <input type="password" id="pw"> <br>
+		<button type="button" onclick="insert()">글작성</button>
 
-
-
+	</div>
 	
 	
-	<form action = "/과제/view/boardin"  method = "get">
 	
-		글순서 :
-		제목 : <input type="text" name = "title">
-		내용 : 	<input type="text" name = "content">
-		비밀번호 : <input type="password" name = "pw"> <br>
-		<input type="submit" value="등록">
-		작성일 : 
-		조회수 :
-	</form>
 	
-
-
+	<h3>게시판</h3>
+		<h1>글보기</h1>
+			<ul class="main">
+				<li id = "number">순서 : </li>
+				<li id = "title1">제목 : </li> 
+				<li id = "content1">내용 : </li>
+				<li id = "writer1" >작성자 : </li>
+				<li id = "date" >작성일 : </li>
+				<li id = "view"> 조회수 : </li>
+			</ul>
+		
+	<script src="board.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 </body>
 </html>

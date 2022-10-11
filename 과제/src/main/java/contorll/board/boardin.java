@@ -37,18 +37,18 @@ public class boardin extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		String title = request.getParameter("title");
+		String writer = request.getParameter("writer");
 		String content = request.getParameter("content");
 		String pw = request.getParameter("pw");
-		System.out.println("222");
-		dto dto = new dto(0,title,content,pw,null,0);
-		System.out.println(dto.toString()); 
+		
+		dto dto = new dto(0,title,writer,content,pw,null,0);
 		
 		boardDao dao = new boardDao();
 		boolean result = dao.board(dto);
 		if(result) {System.out.println("1");}
 		else {System.out.println("등록실패");}
 				
-		response.getWriter().append("등록성공").append(request.getContextPath());
+	
 	}
 
 	/**

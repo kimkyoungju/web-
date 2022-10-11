@@ -5,6 +5,7 @@ public class dto {
 	
 	int num;
 	String title; 
+	String writer;
 	String content;
 	String pw;
 	String today;
@@ -17,7 +18,7 @@ public class dto {
 
 	@Override
 	public String toString() {
-		return "dto [num=" + num + ", title=" + title + ", content=" + content + ", pw=" + pw + ", today=" + today
+		return "dto [num=" + num + ", title=" + title + ", writer="+ writer+",content=" + content + ", pw=" + pw + ", today=" + today
 				+ ", view=" + view + "]";
 	}
 
@@ -48,6 +49,20 @@ public class dto {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+
+	
+
+	public String getWriter() {
+		return writer;
+	}
+
+
+
+
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
 
@@ -109,10 +124,11 @@ public class dto {
 
 
 
-	public dto(int num, String title, String content, String pw, String today, int view) {
+	public dto(int num, String title, String writer ,String content, String pw, String today, int view) {
 		super();
 		this.num = num;
 		this.title = title;
+		this.writer =writer;
 		this.content = content;
 		this.pw = pw;
 		this.today = today;

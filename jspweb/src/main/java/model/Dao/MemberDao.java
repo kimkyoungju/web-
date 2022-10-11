@@ -1,5 +1,8 @@
 package model.Dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.mysql.cj.protocol.Resultset;
 
 import model.Dto.Memberdto;
@@ -17,7 +20,7 @@ public class MemberDao extends Dao {
 			ps = con.prepareStatement(sql);
 			ps.setString( 1 , dto.getMid() );
 			ps.setString( 2 , dto.getMpassword() );
-			ps.setString( 3 , dto.getManme() );
+			ps.setString( 3 , dto.getMname() );
 			ps.setString( 4 , dto.getMphone() );
 			ps.setString( 5 , dto.getMemail() );
 			ps.setString( 6 , dto.getMaddress() );
@@ -103,10 +106,67 @@ public class MemberDao extends Dao {
 	}
 	
 	
+	//6.회원정보 호출
+	public Memberdto getinfo( String mid ) {
+		Memberdto dto = null;
+		String sql ="select * from member where mid = ?";
+		try {
+			ps =  con.prepareStatement(sql);
+			ps.setString( 1 , mid );
+			rs = ps.executeQuery();
+			if( rs.next() ) {
+				// 1. 풀생성자 
+				dto = new Memberdto(
+						rs.getInt( 1 ) , rs.getString( 2 ) , null ,
+						rs.getString( 4 ), rs.getString( 5 ) ,
+						rs.getString( 6 ), rs.getString( 7 ), 
+						rs.getString( 8 ) , rs.getInt( 9 ) 
+						);
+				
+				
+				return dto;
+			}
+		}catch (Exception e) { System.out.println( e );}
+		return dto;
+	}
+	
+	//7.모든 회원
+	public ArrayList<Memberdto>getinfolist(){
+		ArrayList<Memberdto>list = new ArrayList<>();
+		String sql = "select * from member";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Memberdto dto = new Memberdto(rs.getInt(1), rs.getString(2), null,
+						rs.getString(4), rs.getString(5)
+						, rs.getString(6), rs.getString(7),
+						rs.getString(8),rs.getInt(9));
+				list.add(dto);
+			}
+			return list;
+		} catch (Exception e) {
+			System.out.println(e);
+		}return list;
+	}
 	
 	
-	
-	
+	//8회원탈퇴
+	public boolean delete(String mid, String mpassword) {
+		String sql ="delete from member where mid =? and mpassword =?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.setString(2, mpassword);
+			int count = ps.executeUpdate();
+			if(count==1) {
+			return true;}
+		} catch (Exception e) {
+			System.out.println(e);
+		}return false;
+		
+	}
 	
 	
 	

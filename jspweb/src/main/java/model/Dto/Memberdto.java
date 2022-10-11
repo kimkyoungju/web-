@@ -73,7 +73,7 @@ public class Memberdto {
 	public void setMpassword(String mpassword) {
 		this.mpassword = mpassword;
 	}
-	public String getManme() {
+	public String getMname() {
 		return mname;
 	}
 	public void setManme(String mname) {

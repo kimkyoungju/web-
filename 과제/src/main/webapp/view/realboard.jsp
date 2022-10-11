@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<form action="">
+	
 		<div>
 			<h3>게시판 </h3>
 			

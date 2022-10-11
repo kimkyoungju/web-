@@ -25,10 +25,31 @@
 					<a href="/jspweb/index.jsp">BIRTHDAY APPLE SHOP</a>	
 				</span>	
 			</div>
-				<ul class="hd_sub"> <!-- 상단 메뉴 -->
+			
+			<!-- 세션 호출[jsp방식 = 템플릿마다 다름 (jsp vs 리액트] -->
+			
+			<%  
+				//jsp 스크립트 태그 ( 태그안에 java문법 작성 가능)
+				String loginid = (String)session.getAttribute("mid");
+								//형변환 : 세션자료형 = object
+			%>
+				
+			<ul class="hd_sub"> <!-- 상단 메뉴 -->
+				 <!-- /* 자바시작 */ -->
+					<% if(loginid == null){ %> <!-- // 세션이 없다로그인 안했네 -->
+					<!-- 자바엔드 -->
 					<li><a href="/jspweb/Member/login.jsp">로그인</a></li>
 					<li><a href="/jspweb/Member/signup.jsp">회원가입</a></li>
-					<li><a href="#">마이쇼핑</a></li>
+				<!-- 	//세션이 존재한다 로그인 했다. -->
+				<% 		
+					}else{ 
+				%>		
+						<li> <%=loginid %>님 안녕하세요</li>
+						<li> <a href="/jspweb/Member/logout.jsp">로그아웃</a></li>
+						
+				<%	}%>	
+					<!-- 공통메뉴 -->
+					<li><a href="/jspweb/Member/info.jsp">마이쇼핑</a></li>
 					<li><a href="#">고객센터</a></li>
 				</ul>
 			
@@ -40,8 +61,8 @@
 			 <li><a href="#">ANCHOVY SIM</a></li>
 			 <li><a href="#">NO JUONSN</a></li>
 			 <li><a href="#">1+1 이벤트</a></li>
-			 <li><a href="#">바지</a></li>
-			 <li><a href="#">상의</a></li>
+			 <li><a href="#">케이스</a></li>
+			 <li><a href="#">에어팟</a></li>
 			 <li><a href="#">EVENT</a></li>
 			 <li><a href="#">TO DAY</a></li>
 			 <li><a href="#">OUT-FIT</a></li>

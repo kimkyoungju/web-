@@ -14,7 +14,7 @@
 		//1.onclick= "함수명()" : 클릭했을때 함수 호출
 
 function login(){
-
+	
 	let mid = document.querySelector('#mid').value
 	let mpassword = document.querySelector('#mpassword').value
 	let loginconfirmbox = document.querySelector('#loginconfirmbox')
@@ -28,12 +28,11 @@ function login(){
 	
 	$.ajax({
 		
-		url : "/jspweb/member/login", //서블릿url
+		url : "/jspweb/Member/login", //서블릿url
 		data : {"mid" :mid,"mpassword" : mpassword },
 		success : function(re){
 			
 			if(re=== '1'){
-				alert('로그인성공하였습니다')
 				location.href='/jspweb/index.jsp';
 			}else if(re=== '2'){
 				
