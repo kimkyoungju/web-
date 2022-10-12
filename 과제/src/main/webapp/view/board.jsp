@@ -15,11 +15,11 @@
 	<h1>비회원제 게시판</h1>
 		
 		<div>
-			<label>	제목 : <input type="text" id="title"> <br>
+					제목 : <input type="text" id="title"> <br>
 					작성자 : <input type="text" id="writer"><br>
-					내용 : 	<textarea rows="20px" cols="20px" id="content"></textarea><br>
+					내용 : <textarea rows="20px" cols="20px" id="content"></textarea><br>
 					비밀번호 : <input type="password" id="pw"> <br>
-			</label>
+			
 		</div>
 			
 		<button type="button" onclick="insert()">글등록</button>
@@ -41,7 +41,7 @@
 				<li id = "view"> 조회수 : </li>
 			</ul>
 		<h2>삭제하기</h2>	
-		<button type="button" onclick="delete()">글조회</button>	
+		<button type="button" onclick="delete()">삭제</button>	
 		
 	<script src="board.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>

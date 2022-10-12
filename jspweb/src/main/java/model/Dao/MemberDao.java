@@ -169,5 +169,43 @@ public class MemberDao extends Dao {
 	}
 	
 	
+	//9.아이디 중복체크
+	 public boolean idcheck(String mid) {
+		 String sql = "select * from member where mid =?";
+		 try {
+			ps =con.prepareStatement(sql);
+			ps.setString(1, mid);
+			ps.executeQuery();
+			if(rs.next())return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			// TODO: handle exception
+		}return false;
+	 }
+		//10.아이디 중복체크
+	 public boolean memailcheck(String memail) {
+		 String sql = "select * from member where memail =?";
+		 try {
+			ps =con.prepareStatement(sql);
+			ps.setString(1, memail);
+			ps.executeQuery();
+			if(rs.next())return true;
+		} catch (Exception e) {
+			System.out.println(e);
+		}return false;
+	 }
+	 //11.회원 정보 수정
+	 public boolean update(String mid, String mname) {
+		 String sql = "update member set mname = ? where mid =?";
+		 try {
+			ps= con.prepareStatement(sql);
+			ps.setString(1, mname);
+			ps.setString(2, mid);
+			ps.executeUpdate();
+			return true;
+		 }  catch (Exception e) {
+			System.out.println(e);
+		}return false;
+	 }
 	
 }

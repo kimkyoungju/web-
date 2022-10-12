@@ -18,11 +18,10 @@ public class dao {
 					"jdbc:mysql://localhost:3306/boardin",
 					"root",
 					"1234");
-			
+				
 				System.out.println("db연동성공");		
 		} catch (Exception e) {System.out.println("dao"+e);}
 	}
-	
 	
 	
 }

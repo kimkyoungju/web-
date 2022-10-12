@@ -28,14 +28,13 @@ function login(){
 	
 	$.ajax({
 		
-		url : "/jspweb/Member/login", //서블릿url
+		url : "/jspweb/member/login", //서블릿url
 		data : {"mid" :mid,"mpassword" : mpassword },
 		success : function(re){
 			
-			if(re=== '1'){
+			if(re === '1'){
 				location.href='/jspweb/index.jsp';
 			}else if(re=== '2'){
-				
 				loginconfirmbox.innerHTML='아이디 또는 비밀번호가 다릅니다'
 			}else if(re==='3'){
 				loginconfirmbox.innerHTML='데이터베이스 오류[관리자 문의]'

@@ -6,7 +6,7 @@ import model.boarddto.dto;
 public class boardDao extends dao {
 
 	public boolean board(dto dto) {
-		String sql = "insert into board (title,writer,content,pw)values(?,?,?,?);";
+		String sql = "insert into board (title,writer,content,pw)values(?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1,dto.getTitle());
