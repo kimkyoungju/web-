@@ -3,12 +3,13 @@ package model.boarddao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.mysql.cj.xdevapi.Result;
 
 public class dao {
 	
-	Connection con  ; PreparedStatement ps; Result rs;
+	Connection con  ; PreparedStatement ps; ResultSet rs;
 	
 	public dao() {
 		try {

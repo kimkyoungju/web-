@@ -10,9 +10,12 @@
 
 </head>
 <body>
+	
+		
+		
+	
 
-
-	<h1>비회원제 게시판</h1>
+	<h3>글작성</h3>
 		
 		<div>
 					제목 : <input type="text" id="title"> <br>

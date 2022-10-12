@@ -1,6 +1,10 @@
 package model.boarddao;
 
 
+import org.json.simple.JSONArray;
+
+import com.mysql.cj.xdevapi.JsonArray;
+
 import model.boarddto.dto;
 
 public class boardDao extends dao {
@@ -22,4 +26,23 @@ public class boardDao extends dao {
 	}
 	
 
+	
+	
+		public JSONArray bview() {
+			JSONArray array = new JSONArray();
+			String sql = "select title , writer, day from board";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					return array;
+				}
+				
+				
+			} catch (Exception e) {System.out.println(e);
+				// TODO: handle \
+			}return array;
+		}
 }
+
+//2
