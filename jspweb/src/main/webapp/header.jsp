@@ -49,8 +49,8 @@
 						
 				<%	}%>	
 					<!-- 공통메뉴 -->
-					<li><a href="/jspweb/Member/info.jsp">마이쇼핑</a></li>
-					<li><a href="#">고객센터</a></li>
+					<li><a href="/jspweb/Member/info.jsp">나의정보</a></li>
+					<li><a href="/jspweb/board/list.jsp">고객센터</a></li>
 				</ul>
 			
 		</div>	

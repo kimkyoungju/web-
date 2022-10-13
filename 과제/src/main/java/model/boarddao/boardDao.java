@@ -1,6 +1,8 @@
 package model.boarddao;
 
 
+import java.util.ArrayList;
+
 import org.json.simple.JSONArray;
 
 import com.mysql.cj.xdevapi.JsonArray;
@@ -27,15 +29,19 @@ public class boardDao extends dao {
 	
 
 	
-	
-		public JSONArray bview() {
-			JSONArray array = new JSONArray();
+	//2. 출력
+		public ArrayList<dto>bview(){
+			ArrayList<dto>list = new ArrayList<>();
 			String sql = "select title , writer, day from board";
 			try {
 				ps = con.prepareStatement(sql);
 				rs = ps.executeQuery();
-				if(rs.next()) {
-					return array;
+				while(rs.next()) {
+					dto dto = new dto(
+							rs.getString(1),rs.getString(2),rs.getInt(3)
+							);
+							
+					
 				}
 				
 				

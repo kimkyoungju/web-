@@ -1,4 +1,4 @@
-package contorll.board;
+package controller.board;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,23 +13,21 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import com.mysql.cj.xdevapi.JsonArray;
-import com.mysql.cj.xdevapi.JsonValue;
 
-import model.boarddao.boardDao;
-import model.boarddao.dao;
-import model.boarddto.dto;
+import model.Dao.BoardDao;
+import model.Dto.BoardDto;
 
 /**
- * Servlet implementation class view
+ * Servlet implementation class list
  */
-@WebServlet("/board/view")
-public class view extends HttpServlet {
+@WebServlet("/board/list")
+public class list extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public view() {
+    public list() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,13 +36,26 @@ public class view extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 ArrayList<dto>list = 
-			String title = request.getParameter("title");
-		 String writer = request.getParameter("writer");
-		 String day = request.getParameter("day");
-		
-		 
+	
+		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist( );
+		// ** arraylist ---> jsonarray 변환[ js에서 쓸려고 ]
+		JSONArray array = new JSONArray();
+		for( int i = 0  ; i<list.size() ; i++ ) {
+			JSONObject object = new JSONObject();
+			object.put("bno", list.get(i).getBno() );
+			object.put("btitle", list.get(i).getBtitle() );
+			object.put("bdate", list.get(i).getBdate() );
+			object.put("bview", list.get(i).getBview() );
+			object.put("mid", list.get(i).getMid() );
+			array.add(object);
+		}		
+	// 3. 응답o
+	response.setCharacterEncoding("UTF-8"); 
+	response.getWriter().print( array );
+	
+	
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

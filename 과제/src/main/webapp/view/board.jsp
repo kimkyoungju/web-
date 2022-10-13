@@ -13,6 +13,12 @@
 	
 		
 		
+	<h1>게시판</h1>
+	<table class="bbaord">
+		<tr>
+			<th>제목 : </th> <th>작성자 : </th> <th>작성일 : </th><th>조회수 : </th>	
+		</tr>
+	</table>
 	
 
 	<h3>글작성</h3>
