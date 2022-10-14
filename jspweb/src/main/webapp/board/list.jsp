@@ -7,13 +7,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<!-- 부트스트랩 css -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
 <title>Insert title here</title>
 </head>
 <body>
 	<%@include file="../../header.jsp"  %>
 	
 	<div class="webbox">
-		<a href="write.jsp">글쓰기</a>
+		
 		
 		<!-- jsp로 테이블 표시 -->
 		<%-- <table>
@@ -38,18 +42,20 @@
 			}
 			%>
 		</table> --%>
-		<table class="btalbe">
+		<table class="btalbe table table-hover" >
 			<tr>
 				<th> 번호 </th> <th> 제목 </th> <th>작성자</th> 
 				<th> 작성일 </th> <th> 조회수 </th>
 			</tr>
+			
 		</table>
 		
-		
+		<a href="write.jsp">글쓰기</a>
 		
 		
 	</div>
-	
+	<!-- 부트스트랩 js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<script src="../js/board/list.js" type="text/javascript"></script>
 
 </body>

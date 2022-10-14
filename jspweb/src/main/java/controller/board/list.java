@@ -48,6 +48,9 @@ public class list extends HttpServlet {
 			object.put("bview", list.get(i).getBview() );
 			object.put("mid", list.get(i).getMid() );
 			array.add(object);
+			System.out.println(list);
+			System.out.println(array);
+			
 		}		
 	// 3. 응답o
 	response.setCharacterEncoding("UTF-8"); 

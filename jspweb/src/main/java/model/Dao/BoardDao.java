@@ -10,14 +10,15 @@ public class BoardDao extends Dao {
 	public static BoardDao getInstance() {return bdao;}
 	//1. 글등록
 	
-	public boolean write(String btitle ,String bcontent, int mno) {
-		String sql = "insert into board(btitle,bcontent,mno)values(?,?,?)";
+	public boolean write(String btitle ,String bcontent, int mno ,String bfile) {
+		String sql = "insert into board(btitle,bcontent,mno ,bfile)values(?,?,?,?)";
 		try {
 			
 			ps= con.prepareStatement(sql);
 			ps.setString(1,btitle);
 			ps.setString(2,bcontent);
 			ps.setInt(3, mno);
+			ps.setString(4, bfile);
 			ps.executeUpdate(); return true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -71,7 +72,22 @@ public class BoardDao extends Dao {
 			return null;
 		}
 		
+		//4.글삭제 
 		
+		public boolean delete(int bno) {
+			
+			String sql ="delete from board where bno="+bno;
+			
+			try {
+				ps = con.prepareStatement(sql);
+			int count =	ps.executeUpdate(); 
+			if(count==1)	return true;
+			} catch (Exception e) {
+			System.out.println(e);
+			}
+			return false;
+			
+		}
 	/*
 	 * public ArrayList< BoardDto > getlist( ) { ArrayList< BoardDto > list = new
 	 * ArrayList<>(); String sql =

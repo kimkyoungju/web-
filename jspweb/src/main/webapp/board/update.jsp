@@ -25,7 +25,7 @@
 		
 		
 		<div class="webbox">
-			<h3> 글쓰기 </h3> 
+			<h3> 글수정 </h3> 
 			  <!-- from -->
 				<!-- <form method="get"  action="/jspweb/board/write">
 					제목 : <input type="text" name="btitle"> <br>
@@ -39,7 +39,7 @@
 					내용 : <input type="text" name="bcontent"> <br>
 					첨부파일 : <input type="file" name= bfile><br>
 					<!-- form안에서 button 사용시에는 type 필수 넣기 -->
-					<button type="button" onclick="bwrite()">쓰기</button>
+					<button type="button" onclick="bupdate()">수정</button>
 				</form>
 		</div>
 
@@ -49,7 +49,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 	<script src="lang/summernote-ko-KR.js"></script>
 
-	<script src="../js/board/write.js" type="text/javascript"></script>
+	<script src="../js/board/update.js" type="text/javascript"></script>
 
 
 </body>

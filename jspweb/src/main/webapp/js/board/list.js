@@ -1,10 +1,11 @@
 /**
  * 
  */
- 
+
 list()
 
 function list(){
+	
 $.ajax({
 		url : "/jspweb/board/list" , 
 		success : function( re ){
@@ -25,7 +26,7 @@ $.ajax({
 							'<td>'+b.mid+'</td>'+
 							'<td>'+b.bdate+'</td>'+
 							'<td>'+b.bview+'</td>'+
-						'</tr>';
+						'</tr>'
 			} // for end 
 				console.log( html )
 			document.querySelector('.btalbe').innerHTML += html

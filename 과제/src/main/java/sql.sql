@@ -3,7 +3,7 @@ create database boardin;
 use boardin;
 
 create table board(
-number int primary key auto_increment,
+num int primary key auto_increment,
 title varchar(100),
 writer varchar(100),
 content varchar(100),

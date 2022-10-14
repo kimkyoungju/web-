@@ -38,11 +38,23 @@ public class view extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 ArrayList<dto>list = 
-			String title = request.getParameter("title");
-		 String writer = request.getParameter("writer");
-		 String day = request.getParameter("day");
+		boardDao dao = new boardDao();
 		
+		ArrayList<dto>list = dao.bview();
+		JSONArray array = new JSONArray();
+		for(int i =0; i<list.size(); i++) {
+			JSONObject object = new JSONObject();
+			object.put("num", list.get(i).getNum());
+			object.put("title", list.get(i).getTitle());
+			object.put("writer", list.get(i).getWriter());
+			object.put("day", list.get(i).getDay());
+			object.put("view", list.get(i).getView());
+			array.add(object);
+			
+		}
+		System.out.println(array);
+		response.setCharacterEncoding("UTF-8"); 
+		response.getWriter().print( array );
 		 
 	}
 
