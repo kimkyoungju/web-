@@ -36,11 +36,11 @@ public class boardin extends HttpServlet {
 		
 		
 		request.setCharacterEncoding("UTF-8");
-		String title = request.getParameter("title");
-		String writer = request.getParameter("writer");
-		String content = request.getParameter("content");
-		String pw = request.getParameter("pw");
-		
+		String title = request.getParameter("title1");
+		String writer = request.getParameter("writer1");
+		String content = request.getParameter("content1");
+		String pw = request.getParameter("pw1");
+		System.out.println(title);
 		dto dto = new dto(0,title,writer,content,pw,null,0);
 		boardDao dao = new boardDao();
 		boolean result = dao.board(dto);

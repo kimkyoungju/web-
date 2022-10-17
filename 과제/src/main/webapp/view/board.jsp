@@ -29,28 +29,28 @@
 	<h3>게시판</h3>
 		<h1>글보기</h1>
 			<ul class="main">
-				<li id = "number">순서 : </li>
-				<li id = "title1">제목 : </li> 
-				<li id = "content1">내용 : </li>
-				<li id = "writer1" >작성자 : </li>
-				<li id = "date" >작성일 : </li>
+				<li id = "num">순서 : </li>
+				<li id = "title">제목 : </li> 
+				<li id = "content">내용 : </li>
+				<li id = "writer" >작성자 : </li>
+				<li id = "day" >작성일 : </li>
 				<li id = "view"> 조회수 : </li>
 			</ul>
 		
-		<button type="button" onclick="delete()">삭제</button>
-	
+		<button type="button" onclick="delet()">삭제</button>
+		<button type="button" onclick="update()">수정</button>
 
-	<h3>글작성</h3>
+			
+			<h3>글작성</h3>
 		
 		<div>
-					제목 : <input type="text" id="title"> <br>
-					작성자 : <input type="text" id="writer"><br>
-					내용 : <textarea rows="20px" cols="20px" id="content"></textarea><br>
-					비밀번호 : <input type="password" id="pw"> <br>
-			
+					제목 : <input type="text" id="title1"> <br>
+					작성자 : <input type="text" id="writer1"><br>
+					내용 : <textarea rows="20px" cols="20px" id="content1"></textarea><br>
+					비밀번호 : <input type="password" id="pw1"> <br>
+					<button type="button" onclick="insert()">글등록</button>
 		</div>
-			
-		<button type="button" onclick="insert()">글등록</button>
+	
 	
 	
 	

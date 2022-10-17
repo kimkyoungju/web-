@@ -56,7 +56,7 @@ public class boardDao extends dao {
 		//3.개별조회
 		
 		public dto writerboard(int num) {
-			String sql = "select  title,writer,content,day,view from board where num = ?;";
+			String sql = "select * from board where num = ?;";
 			try {
 				ps = con.prepareStatement(sql);
 				ps.setInt(1,num);
@@ -74,8 +74,33 @@ public class boardDao extends dao {
 				System.out.println(e);
 			}return null;
 			}
-		}
 		
+		
+		//삭제
+		
+		public boolean delete(int num) {
+			
+			String sql="delete from board where num="+num;
+			try {
+				ps = con.prepareStatement(sql);
+				int count =	ps.executeUpdate(); 
+				if(count==1)	return true;
+				} catch (Exception e) {
+				System.out.println(e);
+			
+			}	return false;
+			
+			
+		}
 
+
+
+	
+
+
+
+}
+		
+	// 
 
 //2
