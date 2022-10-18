@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 
 import com.mysql.cj.xdevapi.JsonArray;
 
+import controller.member.info;
 import model.Dao.BoardDao;
 import model.Dto.BoardDto;
 
@@ -37,7 +38,49 @@ public class list extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist( );
+		//1. 요청 ㅌ
+			//페이징 처리 필요한 변수 요ㅓㅇ
+		int listsize = Integer.parseInt(request.getParameter("listsize"));
+		
+		//2. 전체페이지수
+		int totalsize = BoardDao.getInstance().gettotalsize();
+		//2. 전체페이지수 계산
+		int totalpage = 0;
+		if(totalsize % listsize == 0) totalpage = totalsize / listsize; // 나머지가 없으면 
+		else totalpage = totalsize/listsize +1; // 나머지가 존재하면 나머지를 표시할 페이지+1
+		
+		
+		//3.현재 페이지수ㅡ
+		int page = Integer.parseInt(request.getParameter("page"));
+		
+		//3. 페이지별 시작 게시물 행 번호
+		int startrow = (page-1)*listsize;
+			//1페이지 -> 1-1 * 3 =>3
+			//2페이지 -> 2-1 * 3 =>6
+		//3. 화면에 표싷ㄹ 최대 버튼수
+		int btnsize = 5; 			// 버튼 5개씩 표시[몫 : 5배수 현재페이지가 최대 버ㅗ튼수 보다 커지면]
+		int startbtn = ((page-1 )/btnsize) *btnsize+1;
+		int endbtn  = startbtn + (btnsize -1);
+			
+		//만약에 endbtn 마지막 페이지보다 크면 마지막 버튼 번호는 마지막 페이지
+		if(endbtn > totalpage) endbtn = totalpage;
+		
+					 
+//	1페이지 경우   1
+//	2페이지 경우	1	
+//	3페이지 경우	1
+//	4페이지 경우	1
+//	5페이지 경우	1
+//	6페이지 경우 	6
+//				
+//			sb		    eb
+//	page 1~5		1 2  3   4   5
+//	page 6~10		6 7 8   9   10
+//	page 11~15		11 12 13 14  15
+		//페이징 처리에 필요한 정보담는 object
+		JSONObject boards = new JSONObject();
+		
+		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist(startrow ,listsize);
 		// ** arraylist ---> jsonarray 변환[ js에서 쓸려고 ]
 		JSONArray array = new JSONArray();
 		for( int i = 0  ; i<list.size() ; i++ ) {
@@ -51,10 +94,14 @@ public class list extends HttpServlet {
 			System.out.println(list);
 			System.out.println(array);
 			
-		}		
+		}
+		boards.put("totalpage", totalpage);
+		boards.put("data",array);
+		boards.put("startbtn", startbtn);
+		boards.put("endbtn", endbtn);
 	// 3. 응답o
 	response.setCharacterEncoding("UTF-8"); 
-	response.getWriter().print( array );
+	response.getWriter().print( boards );
 	
 	
 	}

@@ -2,15 +2,31 @@
  * 
  */
 
-list()
 
-function list(){
+let pageinfo = { //js 객체
+	listsize : 3,
+	page : 1
+	
+	
+}
+
+list(1)
+
+function list(page){
+	
+	pageinfo.page= page;
 	
 $.ajax({
 		url : "/jspweb/board/list" , 
+		data:pageinfo,
 		success : function( re ){
-			console.log( re )
-			let boardlist = JSON.parse( re )
+			
+			let boards = JSON.parse(re)
+		
+			
+			console.log( boards)
+			//1. object 내 게시물리스트 먼저 호출
+			let boardlist = boards.data
 			console.log( boardlist )
 			let html = ""
 			// boardlist -> 객체를 하나씩 꺼내기
@@ -29,7 +45,27 @@ $.ajax({
 						'</tr>'
 			} // for end 
 				console.log( html )
-			document.querySelector('.btalbe').innerHTML += html
+			document.querySelector('.btalbe').innerHTML = html
+			
+			
+			//1. 페이징버튼 html 구성
+			let pagehtml = '';
+			 
+			 
+			 //2. 이전버튼
+			 if(page<=1){ pagehtml += '<button onclick="list('+(page)+')">이전</button>'}
+				else {pagehtml += '<button onclick="list('+(page-1)+')">이전</button>'}	
+			//4. 페이지 번호 버튼
+				for(let page = boards.startbtn; page<= boards.endbtn; page++){
+					pagehtml +='<button type="button" onclick="list('+page+')">'+page+'</button>'
+					
+				}
+				
+			//3. 다음 버튼
+			if(page == boards.totalpage){pagehtml +=  '<button onclick="list('+(page)+')">다음</button>'}
+			else{pagehtml +=  '<button onclick="list('+(page+1)+')">다음</button>'}
+			
+			document.querySelector(".pagebox").innerHTML = pagehtml;
 		}
 	})
 }

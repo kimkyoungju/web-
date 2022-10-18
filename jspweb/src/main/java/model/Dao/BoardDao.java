@@ -27,9 +27,9 @@ public class BoardDao extends Dao {
 	}
 	
 	//2. 글출력[jsp용]
-	public ArrayList<BoardDto> getlist() {
+	public ArrayList<BoardDto> getlist(int startrow , int listsize) {
 		ArrayList<BoardDto>list = new ArrayList<>();
-		String sql = "select b.* , m.mid from member m , board b where m.mno = b.mno;";
+		String sql = " select b.* , m.mid from member m , board b where m.mno = b.mno order by b.bdate desc limit "+startrow+","+listsize;
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -87,7 +87,71 @@ public class BoardDao extends Dao {
 			}
 			return false;
 			
+		
+		//5
+			
+		
+		
+		
 		}
+		
+		
+		public boolean bfiledelete(int bno) {
+			
+			String sql =  "update board set bfile =null where bno ="+bno;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.executeUpdate();return true;				
+			} catch (Exception e) {
+			System.out.println(e);
+			}return true;	
+		}
+		
+		
+		
+		// 게시물 수정
+		public boolean bupdate(int bno,  String btitle , String content , String bfile) {
+			
+			String sql = "update board set btitle =?, bcontent =? ,bfile =? where bno =?";
+			try {
+				ps= con.prepareStatement(sql);
+				ps.setString(1, btitle);
+				ps.setString(2, content);
+				ps.setString(3, bfile);
+				ps.setInt(4, bno);
+				ps.executeUpdate(); return true;
+			} catch (Exception e) {System.out.println(e);
+			}return false;
+		}
+		//7. 조회수 증가
+		
+		public void bviewupdate(int bno) {
+			String sql = "update board set bview = bview+1 where bno="+bno;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.executeUpdate();
+			} catch (Exception e) {System.out.println(e);
+				// TODO: handle exception
+			}
+		}
+		
+		
+		//8. 전체 게시물수
+		public int gettotalsize() {
+			
+			String sql = "select count(*) from board";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				if(rs.next())return rs.getInt(1);
+				
+				
+			} catch (Exception e) {
+				System.out.println(e);// TODO: handle exception
+			}return 0;
+			
+		}
+		
 	/*
 	 * public ArrayList< BoardDto > getlist( ) { ArrayList< BoardDto > list = new
 	 * ArrayList<>(); String sql =

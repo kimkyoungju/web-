@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.boarddao.boardDao;
+import model.boarddao.dao;
+import model.boarddto.dto;
 
 /**
  * Servlet implementation class delete
@@ -18,16 +20,22 @@ public class delete extends HttpServlet {
        
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	   
+	
 	   
-	   
-	   int num = Integer.parseInt(request.getParameter("num"));
-	   System.out.println(num);
-	   boardDao dao = new boardDao();
-	   
-	   request.setAttribute("num", num);
-	   boolean result = dao.delete(num);
-	   System.out.println(result);
-		response.getWriter().print(result);
+		
+		 int num = Integer.parseInt(request.getParameter("num"));
+		 System.out.println(num); 
+		 
+		 boardDao dao = new boardDao();
+		 
+		 boolean result =  dao.delete(num);
+		
+		 
+		 response.getWriter().print(result);
+		
+		
+		
+		
 	}
    
    

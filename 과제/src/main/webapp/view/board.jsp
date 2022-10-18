@@ -5,13 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+	
 	<meta name="viewport" content="width = device-width , inital-scale=1.0">
-
+<link rel="stylesheet" href="board.css"> 
 </head>
 <body>
 	
-		
+	<div class="m1">
 		
 	<h1>게시판</h1>
 	<table class="bbaord">
@@ -25,11 +25,11 @@
 	<input type="text" class="sview">
 	<button type="button" onclick="view()">글조회</button>
 	
-	
+	<div>
 	<h3>게시판</h3>
 		<h1>글보기</h1>
 			<ul class="main">
-				<li id = "num">순서 : </li>
+				<li id = "num" class="num1">순서 : </li>
 				<li id = "title">제목 : </li> 
 				<li id = "content">내용 : </li>
 				<li id = "writer" >작성자 : </li>
@@ -39,7 +39,7 @@
 		
 		<button type="button" onclick="delet()">삭제</button>
 		<button type="button" onclick="update()">수정</button>
-
+	</div>
 			
 			<h3>글작성</h3>
 		
@@ -52,8 +52,8 @@
 		</div>
 	
 	
-	
-	
+	</div>
+		
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="board.js" type="text/javascript"></script>
 

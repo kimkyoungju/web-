@@ -80,21 +80,30 @@ public class boardDao extends dao {
 		
 		public boolean delete(int num) {
 			
-			String sql="delete from board where num="+num;
+			String sql="delete from board where num = "+num;
 			try {
 				ps = con.prepareStatement(sql);
 				int count =	ps.executeUpdate(); 
-				if(count==1)	return true;
+				if(count==1)return true;
 				} catch (Exception e) {
 				System.out.println(e);
-			
 			}	return false;
 			
 			
 		}
 
 
-
+		//조회수
+		
+		public void read(int num) {
+			String sql ="update board set view = view+1 where num="+num;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.executeUpdate();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+		}
 	
 
 

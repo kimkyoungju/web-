@@ -1,4 +1,10 @@
 
+
+
+
+let num = 0;
+
+
 bview()
 function insert(){
 	let title = document.querySelector("#title1").value
@@ -37,7 +43,7 @@ function bview(){
 			let b= list[i]
 			console.log(b)
 			
-			html += '<tr>' +
+			html += '<tr class="m3">' +
 							'<td>'+b.num+'</td>'+
 							'<td>'+b.title+'</td>'+
 							'<td>'+b.writer+'</td>'+
@@ -75,7 +81,7 @@ function view(){
 			document.querySelector('#writer').innerHTML = board.writer;
 			document.querySelector('#day').innerHTML = board.day;
 			document.querySelector('#view').innerHTML = board.view;
-			
+			num = board.num;
 			console.log(board.num)	
 		
 		}
@@ -83,7 +89,7 @@ function view(){
 	})
 }	
 
-function delet(num){
+function delet(){
 
 	$.ajax({
 		url: "/과제/view/delete",
@@ -91,6 +97,7 @@ function delet(num){
 		success: function(re){
 			if(re==='true'){
 			alert("삭제성공")
+			location.reload()
 			}else{
 				alert("삭제실패")
 			}
@@ -100,7 +107,24 @@ function delet(num){
 	})
 	
 	
-	
+
 	
 }
+
+
+function read(){
+	
+	$.ajax({
+		url : "/과제/view/read", 
+		data : { "num" : num },
+		success : function( re ){
+			
+			alert(re)
+			if(re==='true')alert(re)
+			else {alert("실패")}
+		}
+		
+	})
+	console.log(num)
+}	
 	

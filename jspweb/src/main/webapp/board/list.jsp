@@ -47,10 +47,14 @@
 				<th> 번호 </th> <th> 제목 </th> <th>작성자</th> 
 				<th> 작성일 </th> <th> 조회수 </th>
 			</tr>
-			
+		
 		</table>
 		
-		<a href="write.jsp">글쓰기</a>
+			<a href="write.jsp">글쓰기</a>
+			<div class="pagebox">
+			
+			</div>
+		
 		
 		
 	</div>

@@ -35,8 +35,7 @@
 				<form enctype="application/x-www-form-urlencoded">
 					제목 : <input type="text"  name="btitle"> <br>
 					<textarea id="summernote" name="bcontent"></textarea>
-
-					내용 : <input type="text" name="bcontent"> <br>
+							
 					첨부파일 : <input type="file" name= bfile><br>
 					<!-- form안에서 button 사용시에는 type 필수 넣기 -->
 					<button type="button" onclick="bwrite()">쓰기</button>
