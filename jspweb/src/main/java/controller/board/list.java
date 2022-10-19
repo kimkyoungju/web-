@@ -37,13 +37,26 @@ public class list extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("UTF-8");
 	
+		//////////////////검색처리
+		String key = request.getParameter("key");
+		String keyword = request.getParameter("keyword");
+		System.out.println(key);
+		System.out.println(keyword);
+		
+		
+		///////////////////////
+		
+		
+		
 		//1. 요청 ㅌ
 			//페이징 처리 필요한 변수 요ㅓㅇ
 		int listsize = Integer.parseInt(request.getParameter("listsize"));
 		
-		//2. 전체페이지수
-		int totalsize = BoardDao.getInstance().gettotalsize();
+		//2. 전체페이지수 vs 검색된 게시물 수 
+		int totalsize = BoardDao.getInstance().gettotalsize(key,keyword);
 		//2. 전체페이지수 계산
 		int totalpage = 0;
 		if(totalsize % listsize == 0) totalpage = totalsize / listsize; // 나머지가 없으면 
@@ -79,13 +92,13 @@ public class list extends HttpServlet {
 //	page 11~15		11 12 13 14  15
 		//페이징 처리에 필요한 정보담는 object
 		JSONObject boards = new JSONObject();
-		
-		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist(startrow ,listsize);
+		//2. 전체 게시물 호출 vs 검색된 게시물 호출 
+		ArrayList<BoardDto> list =  BoardDao.getInstance().getlist(startrow ,listsize,key,keyword);
 		// ** arraylist ---> jsonarray 변환[ js에서 쓸려고 ]
 		JSONArray array = new JSONArray();
 		for( int i = 0  ; i<list.size() ; i++ ) {
 			JSONObject object = new JSONObject();
-			object.put("bno", list.get(i).getBno() );
+			object.put("bno", list.get(i).getBno() ); 
 			object.put("btitle", list.get(i).getBtitle() );
 			object.put("bdate", list.get(i).getBdate() );
 			object.put("bview", list.get(i).getBview() );
@@ -99,6 +112,7 @@ public class list extends HttpServlet {
 		boards.put("data",array);
 		boards.put("startbtn", startbtn);
 		boards.put("endbtn", endbtn);
+		boards.put("totalsize", totalsize);
 	// 3. 응답o
 	response.setCharacterEncoding("UTF-8"); 
 	response.getWriter().print( boards );

@@ -1,14 +1,18 @@
 /**
  * 
  */
-
-
-let pageinfo = { //js 객체
-	listsize : 3,
-	page : 1
-	
+ 
+ let pageinfo = { //js 객체
+	listsize : 5,
+	page : 1,       //현재 페이지 번호
+	key : '',		//검색 키
+	keyword : '',	//검색 키워드
 	
 }
+
+//
+
+
 
 list(1)
 
@@ -24,16 +28,16 @@ $.ajax({
 			let boards = JSON.parse(re)
 		
 			
-			console.log( boards)
+			
 			//1. object 내 게시물리스트 먼저 호출
 			let boardlist = boards.data
-			console.log( boardlist )
+			
 			let html = ""
 			// boardlist -> 객체를 하나씩 꺼내기
 			for( let i = 0 ;  i<boardlist.length ; i++){
 				// 1. i번째 객체 호출 
 				let b = boardlist[i]
-				console.log( b )
+				
 				// 2. i번쨰 객체의 정보를 html 형식으로 변환해서 문자열에 저장
 				html += '<tr>' +
 							'<td>'+b.bno+'</td>'+
@@ -44,7 +48,7 @@ $.ajax({
 							'<td>'+b.bview+'</td>'+
 						'</tr>'
 			} // for end 
-				console.log( html )
+				
 			document.querySelector('.btalbe').innerHTML = html
 			
 			
@@ -66,6 +70,9 @@ $.ajax({
 			else{pagehtml +=  '<button onclick="list('+(page+1)+')">다음</button>'}
 			
 			document.querySelector(".pagebox").innerHTML = pagehtml;
+		//5. 전체 vs 검색된 게시물 수 표시
+			document.querySelector(".totalsize").innerHTML = boards.totalsize;
+			
 		}
 	})
 }
@@ -80,6 +87,30 @@ function viewload( bno ){
 }
 
 
+ //검색
+ 
+ function bsearch(){
+	
+		let key = document.querySelector(".key").value
+		let keyword = document.querySelector(".keyword").value
+		
+		pageinfo.key = key
+		pageinfo.keyword = keyword
+	
+		
+		list(1)
+		
+
+}
+
+//6. 게시물 표시 개수 
+function blistsize(){
+
+pageinfo.listsize = document.querySelector(".listsize").value;
+list(1);
+
+
+}
 
 
 

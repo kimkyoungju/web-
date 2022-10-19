@@ -1,4 +1,4 @@
-package controll.member;
+package controller.board;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,19 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.dao.memberdao;
+import org.json.simple.JSONArray;
+
+import model.Dao.BoardDao;
 
 /**
- * Servlet implementation class check
+ * Servlet implementation class rlist
  */
-@WebServlet("/member/check")
-public class check extends HttpServlet {
+@WebServlet("/reply/rlist")
+public class rlist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public check() {
+    public rlist() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,14 +30,28 @@ public class check extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//1.요청
+		String type =	request.getParameter("type");
 		
-	String id = request.getParameter("id");
-	String name = request.getParameter("name");
-	System.out.println(id);
-	System.out.println(name);
-	boolean result = memberdao.getInstance().check(id,name);
-	response.getWriter().print(result);
-	System.out.println(result);
+		
+		int bno = (Integer)request.getSession().getAttribute("bno");
+		JSONArray array =  new JSONArray();
+		//2. dao처리
+		if (type.equals("0")) { 
+			array= BoardDao.getInstance().getrlist(bno);
+		}else if(type.equals("1")) {
+			int rindex = Integer.parseInt(request.getParameter("rno"));
+			array = BoardDao.getInstance().getrrlist(bno , rindex);
+		}
+			
+		//3. 결과
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(array);
+		
+		
+		
+		
+	
 	}
 
 	/**
