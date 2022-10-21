@@ -14,7 +14,10 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	<!-- 사용자 정의 css호출 -->
 	<link rel="stylesheet" href="/jspweb/css/header.css">
-
+		
+	<!-- 부트스트랩 css -->	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+		
 </head>
 <body>
 		
@@ -36,7 +39,7 @@
 				
 			<ul class="hd_sub"> <!-- 상단 메뉴 -->
 				 <!-- /* 자바시작 */ -->
-					<% if(loginid == null){ %> <!-- // 세션이 없다로그인 안했네 -->
+					<%if(loginid == null){%> <!-- // 세션이 없다로그인 안했네 -->
 					<!-- 자바엔드 -->
 					<li><a href="/jspweb/Member/login.jsp">로그인</a></li>
 					<li><a href="/jspweb/Member/signup.jsp">회원가입</a></li>
@@ -44,7 +47,7 @@
 				<% 		
 					}else{ 
 				%>		
-						<li> <%=loginid %>님 안녕하세요</li>
+						<li> <%=loginid%>님 안녕하세요</li>
 						<li> <a href="/jspweb/Member/logout.jsp">로그아웃</a></li>
 						
 				<%	}%>	
@@ -65,7 +68,7 @@
 			 <li><a href="#">에어팟</a></li>
 			 <li><a href="#">EVENT</a></li>
 			 <li><a href="#">TO DAY</a></li>
-			 <li><a href="#">OUT-FIT</a></li>
+			 <li><a href="/jspweb/board/chatting.jsp">채팅방</a></li>
 			 	<li class="searchbox">
 			 		<span>
 				 		<input>
@@ -78,6 +81,7 @@
 		</ul>
 			
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>

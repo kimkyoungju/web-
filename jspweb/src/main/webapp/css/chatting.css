@@ -1,0 +1,71 @@
+/*
+
+m: 바깥여백
+
+my : 세로가로 바깥여백
+mx : 왼쪽/오른쪽 바같여백
+
+
+
+*/
+
+
+.chattingbox{
+	
+	border: 3px solid #f9f9f9;
+	
+}
+
+
+.contentbox{
+/* 채팅창 */	
+	height : 700px;
+	background-color:  #bacee0;
+/* 	만약에 내용 물이 크기보다 커지면 스크롤*/
+overflow-y:scroll; /* 세로스크롤 */ 
+
+	
+}
+.secontent{
+	/* 보낼때 */
+	
+	text-align: right; /* 텍스트 오른쪽배치 */
+	
+	
+}
+.secontent .content{
+	
+background-color: #ffeb33;
+
+}
+.content{
+	background-color: #ffffff;
+	border-radius: 10px; 
+	padding: 10px;
+	max-width: 70%;
+	word-break: break-all; /* 박스권 사이즈보다 텍스트가 더길어지면줄바꿈처리 */ 
+	display: inline-block;
+	font-size: 12px;
+}
+.date{
+	/* 날짜표시 */
+	font-size: 1px; margin: 5px 2px;
+	
+}
+.alarm{ /* 알림표시 */
+	width: 70%;
+	margin: 0 auto; 
+	text-align:  center; font-size: 5px;
+	padding: 2%;
+	background-color: #a9bdce; 
+}
+.name{
+	font: 12px;
+}
+
+.msgbox{resize: none;}
+
+.dropdown-menu{
+	overflow-y:scroll; 
+	
+}
