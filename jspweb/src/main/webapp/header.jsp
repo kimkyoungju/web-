@@ -67,7 +67,7 @@
 			 <li><a href="#">케이스</a></li>
 			 <li><a href="#">에어팟</a></li>
 			 <li><a href="#">EVENT</a></li>
-			 <li><a href="#">TO DAY</a></li>
+			 <li><a href="/jspweb/baord/api.jsp">공공데이터</a></li>
 			 <li><a href="/jspweb/board/chatting.jsp">채팅방</a></li>
 			 	<li class="searchbox">
 			 		<span>
@@ -87,6 +87,13 @@
 </body>
 </html>
 <!-- 
+헤더파일 [ 모든페이지에서 호툴되는 파일]
+	경로 ㅣ 
+		/ :  최상위 경로 = localhost : 8080
+		
+		
+	
+ --><!-- 
 
 		<div> :레이아웃, 박스권,구역
 		<span>
