@@ -27,10 +27,8 @@
 		<div class="sidebar">
 			<h3>ADMIN MENU</h3>
 			<ul class="side_menu">
-				<li class="side_item"><a onclick="pagechage('regist.jsp')">제품등록</a>
-				
-				<li class="side_item"><a href="#">제품목록</a>
-				
+				<li class="side_witem"><a onclick="pagechage('regist.jsp')">제품등록</a>
+				<li class="side_item"><a onclick="pagechage('list.jsp')">제품목록</a>
 				<li class="side_item"><a href="#">재고관리</a>
 				
 				<li class="side_item"><a href="#">주문관리</a>

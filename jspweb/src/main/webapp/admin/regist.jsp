@@ -6,14 +6,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="/jspweb/css/dashboard.css" rel="stylesheet">
 <body>
 
 
 
 <div class="container">
 
-	<h3>제품등록</h3>
-	<form action="">
+	<h3 >제품등록</h3>
+	<form action="" class="ti">
 		제품명 : <input type="text" name ="pname"><br>
 		설명 : <textarea rows="" cols="" name ="pcomment"></textarea><br>
 		가격 : <input type="text" name="pprice"><br>
