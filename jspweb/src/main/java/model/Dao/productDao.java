@@ -57,9 +57,19 @@ public class productDao extends Dao {
 		}
 		
 		//4. 제품출력[r
-		public ArrayList<productDto> getproductlist(){
+		public ArrayList<productDto> getproductlist(String option ){
 			ArrayList<productDto>list = new ArrayList<>();
-			String sql = "select *from product";
+			System.out.println(list);
+			System.out.println(option);
+			String sql = null;
+			//1. 조건없는 모든 제품 출력
+			if(option.equals("all")) {
+			 sql = "select *from product";
+			}else if(option.equals("pactive1")) {
+			//2. [판매중] 상태 상태만 모든 체품 출력
+			 sql ="select * from product where pactive = 1 order by pdate desc";
+			}
+			System.out.println(sql);
 			try {
 				
 				ps = con.prepareStatement(sql);
@@ -72,10 +82,11 @@ public class productDao extends Dao {
 							rs.getString(7),rs.getString(8),rs.getInt(9)
 							);
 					list.add(dto);}
-				
+			
 			} catch (Exception e) {System.out.println(e);}
 			return list;
 		}
+	
 		//5 . 제품 삭제
 		public boolean deleteprodcut( int pno) {
 			String sql = "delete from product where pno ="+pno;

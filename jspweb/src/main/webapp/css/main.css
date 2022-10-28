@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+
+.itemlist {
+    display: flex;
+    margin: 5% 3%;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* 가로배치 사이즈가 넘쳤을떄 자동으로 줄바꿈 */
+}
+
+.item{
+	width: 20%;
+	margin: 1%;
+}
+.main_title{
+		font-family: 'RixInooAriDuriR';
+		text-align: center;
+		margin: 0 auto;
+		width: 30%; /* 가로사이즈 */
+		border-bottom: 2px #999999 solid;
+		/* 테두리 길이 -> 경계선 */
+		padding-top: 10%;
+}
+
+.item img{
+	width: 100%;
+	border-radius: 20px;
+}
+.item :hover {
+	opacity: 0.9;
+}
+.item_title{
+	font-size: 15px;
+	margin: 2% 0%;
+}
+.item_size{
+	font-size: 13px;
+	color: #999999;
+	border-bottom: 1px solid #999999;
+	padding-bottom: 2%; 
+	}
+.item_price{
+	font-size: 15px;
+	color: #999999;
+	text-decoration: line-through; /* 취소선 */
+	margin: 5%
+}
+.item_sale{
+	font-size: 20px;
+  	font-family: 'RixInooAriDuriR';
+}
+.item_discount{
+	  font-family: 'RixInooAriDuriR';
+	font-size : 20px;
+	color: #ff9995;
+}
+.item_review{
+	text-align: right;
+	margin: 3% 0%;
+	font-size: 12px;
+	color: #999999;
+}

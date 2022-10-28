@@ -46,10 +46,15 @@ public class regist extends HttpServlet { // http 서블릿 클래스 메소드
 		
 		
 		if(type.equals("1")) {
+		//1. 전체출력 2. 판매출력
+			String option = request.getParameter("option");
+			System.out.println(option);
+			
 			//////////////////////////////타입 1//////////////////////////////
-			ArrayList<productDto>list = new productDao().getproductlist();
+			ArrayList<productDto>list = new productDao().getproductlist(option);
 			//list -> json
 			JSONArray a = new JSONArray();
+			
 			for(int i= 0; i<list.size(); i++) {
 				JSONObject object = new JSONObject(); 
 				object.put("pno",list.get(i).getPno() );
@@ -62,8 +67,9 @@ public class regist extends HttpServlet { // http 서블릿 클래스 메소드
 				object.put("pdate",list.get(i).getPdate() );
 				object.put("pcno",list.get(i).getPcno() );
 				a.add(object);
-			
 				
+				System.out.println(object);
+				System.out.println(a);
 			}
 			response.getWriter().print(a);
 		/////////////////////////////////////////////////////////////

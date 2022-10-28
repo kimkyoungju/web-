@@ -25,7 +25,7 @@
 		<div class = "hd_top"> 
 			<div> <!-- 로고 -->
 				<span class="hd_title">
-					<a href="/jspweb/index.jsp">BIRTHDAY APPLE SHOP</a>	
+					<a class="nav-link" href="/jspweb/index.jsp">BIRTHDAY APPLE SHOP</a>	
 				</span>	
 			</div>
 			
@@ -41,37 +41,37 @@
 				 <!-- /* 자바시작 */ -->
 					<%if(loginid == null){%> <!-- // 세션이 없다로그인 안했네 -->
 					<!-- 자바엔드 -->
-					<li><a href="/jspweb/Member/login.jsp">로그인</a></li>
-					<li><a href="/jspweb/Member/signup.jsp">회원가입</a></li>
+					<li><a class="nav-link" href="/jspweb/Member/login.jsp">로그인</a></li>
+					<li><a class="nav-link" href="/jspweb/Member/signup.jsp">회원가입</a></li>
 				<!-- 	//세션이 존재한다 로그인 했다. -->
 				
 				<% }else if(loginid.equals("admin")){ %>
-					<li> <a href="/jspweb/admin/dashboard.jsp">관리자</a></li>   <!-- 관리자 페이지 -->
+					<li> <a class="nav-link" href="/jspweb/admin/dashboard.jsp">관리자</a></li>   <!-- 관리자 페이지 -->
 				<% 		
 					}else{ 
 				%>		
 						<li> <%=loginid%>님 안녕하세요</li>
-						<li> <a href="/jspweb/Member/logout.jsp">로그아웃</a></li>
+						<li> <a class="nav-link" href="/jspweb/Member/logout.jsp">로그아웃</a></li>
 						
 				<%	}%>	
 					<!-- 공통메뉴 -->
-					<li><a href="/jspweb/Member/info.jsp">나의정보</a></li>
-					<li><a href="/jspweb/board/list.jsp">고객센터</a></li>
+					<li><a class="nav-link" href="/jspweb/Member/info.jsp">나의정보</a></li>
+					<li><a class="nav-link" href="/jspweb/board/list.jsp">고객센터</a></li>
 				</ul>
 			
 		</div>	
 		
 		<ul class="hd_menu">
-			 <li><a href="#">BIG SIZE!</a></li>
-			 <li><a href="#">BIG ANTEASUB</a></li>
-			 <li><a href="#">ANCHOVY SIM</a></li>
-			 <li><a href="#">NO JUONSN</a></li>
-			 <li><a href="#">1+1 이벤트</a></li>
-			 <li><a href="#">케이스</a></li>
-			 <li><a href="#">에어팟</a></li>
-			 <li><a href="#">EVENT</a></li>
-			 <li><a href="/jspweb/baord/api.jsp">공공데이터</a></li>
-			 <li><a href="/jspweb/board/chatting.jsp">채팅방</a></li>
+			 <li><a class="nav-link" href="#">BIG SIZE!</a></li>
+			 <li><a class="nav-link" href="#">BIG ANTEASUB</a></li>
+			 <li><a class="nav-link" href="#">ANCHOVY SIM</a></li>
+			 <li><a class="nav-link" href="#">NO JUONSN</a></li>
+			 <li><a class="nav-link" href="#">1+1 이벤트</a></li>
+			 <li><a class="nav-link" href="#">케이스</a></li>
+			 <li><a class="nav-link" href="#">에어팟</a></li>
+			 <li><a class="nav-link" href="#">EVENT</a></li>
+			 <li><a  class="nav-link" href="/jspweb/baord/api.jsp">공공데이터</a></li>
+			 <li><a class="nav-link" href="/jspweb/board/chatting.jsp">채팅방</a></li>
 			 	<li class="searchbox">
 			 		<span>
 				 		<input>

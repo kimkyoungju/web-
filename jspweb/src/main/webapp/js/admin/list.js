@@ -8,7 +8,7 @@
 	
 	$.ajax({
 		url: "/jspweb/admin/regist",
-		data  : {"type" : 1},
+		data  : {"type" : 1 ,"option" : "all"},
 		type :"get",
 		success : function(re){
 			let json = JSON.parse(re)
@@ -24,6 +24,8 @@
 			for(let i = 0; i < json.length; i++){
 					img = '/jspweb/admin/pimg/'+json[i].pimg;
 					console.log(img)
+					
+				let total = json[i].pprice-(json[i].pprice/json[i].pdiscount)
 					html += '<tr>'+
 								'<td><img src ="'+img+'" width ="100%"></td>'+
 								'<td>'+json[i].pno+'</td>'+
@@ -31,7 +33,7 @@
 								'<td>'+json[i].pname+'</td>'+
 								'<td>'+json[i].pprice+'</td>'+
 								'<td>'+json[i].pdiscount+'</td>'+
-								'<td>'+json[i].pprice*json[i].pdiscount+'</td>'+
+								'<td>'+total+'</td>'+
 								'<td>'+json[i].pactive+'</td>'+
 								'<td>'+json[i].pdate+'</td>'+
 								'<td>'+
