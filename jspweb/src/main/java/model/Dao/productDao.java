@@ -1,10 +1,12 @@
 package model.Dao;
 
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import controller.admin.regist;
 import model.Dto.pcatagoryDto;
 import model.Dto.productDto;
+import model.Dto.stockDto;
 
 public class productDao extends Dao {
 		
@@ -139,6 +141,50 @@ public class productDao extends Dao {
 			
 		}
 		
+		// 8. 재고 등록
+		public boolean setstock(String psize ,int pno ,String pcolor,int pstock) {
+			//1. 사이즈 먼저 등록
+			
+			String sql = "insert into productsize(psize ,pno ) values(?,?)";
+			try {
+				ps = con.prepareStatement(sql ,Statement.RETURN_GENERATED_KEYS );
+				ps.setString(1, psize); ps.setInt(2, pno);
+				ps.executeUpdate();
+					// 방금 insert 된pk값 가져오기
+					//1. con.prepareStatement(sql , );
+					//2. ps.getGeneratedKeys(); : pk값 호출
+					rs =  ps.getGeneratedKeys();
+					if(rs.next()) {
+						int psno = rs.getInt(1);//pk호출
+						sql = "insert into productstock (pcolor , pstock ,psno) values (?,?,?);";
+						ps = con.prepareStatement(sql);
+						ps.setString(1, pcolor);
+						ps.setInt(2, pstock);
+						ps.setInt(3, psno);
+					 ps.executeUpdate();
+					 return true;
+					}
+			} catch (Exception e) {System.out.println(e);}
+			return false;
+		}
 		
+		//9.제품별 재고 출력
+		
+		public ArrayList<stockDto>getstock(int pno){
+			ArrayList<stockDto>list = new ArrayList<>();
+			
+			String sql = "select  ps.psno , ps.psize , pst.pstno, pst.pcolor , pst.pstock from productsize ps ,productstock pst where ps.psno = pst.psno and ps.pno ="+pno+" order by ps.psize desc;";
+			try {
+				
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					stockDto dto = new stockDto(rs.getInt(1), rs.getString(2), 
+							rs.getInt(3),rs.getString(4),rs.getInt(5));
+					list.add(dto);
+				}
+			} catch (Exception e) {System.out.println(e);}return list;
+			 
+		}
 }	
 
