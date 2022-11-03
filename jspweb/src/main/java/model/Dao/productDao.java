@@ -4,6 +4,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import controller.admin.regist;
+import model.Dto.CartDto;
 import model.Dto.pcatagoryDto;
 import model.Dto.productDto;
 import model.Dto.stockDto;
@@ -186,5 +187,78 @@ public class productDao extends Dao {
 			} catch (Exception e) {System.out.println(e);}return list;
 			 
 		}
+		
+		//10. 제품 찜하기
+		public int setPlike(int pno ,int mno) {
+			String sql = "select * from plike where pno =? and mno =?"; //검색 [ 해당 찜하기 여부 있는지 체크
+				try {
+					ps = con.prepareStatement(sql);
+					ps.setInt(1 , pno); ps.setInt(2, mno); 
+					rs = ps.executeQuery();
+					if(rs.next()) { //  검색결과가 있으면 //이미 찜하기 되어잇는 경우
+						sql = "delete from plike where pno =? and mno =?";
+						ps = con.prepareStatement(sql);
+
+						ps.setInt(1 , pno); ps.setInt(2, mno);  
+						ps.executeUpdate(); return 1;
+
+					}else{ // 등록
+						sql = "insert into plike (pno , mno) values(?,?)";
+						ps = con.prepareStatement(sql);
+
+						ps.setInt(1 , pno); ps.setInt(2, mno); 
+						ps.executeUpdate(); return 2;
+
+					}
+					
+				} catch (Exception e) {System.out.println(e);} return 3;
+		
+		}
+		
+		//11. 장바구니 선택한 제품 변환
+		public boolean setcart(int pno , String psize , int amount , String pcolor, int mno) {
+			
+			String sql = " insert into cart(amount , pstno , mno) "
+					+ " values ("
+					+ " "+amount+"	,"
+					+ "   (select pstno "
+					+ "	from productstock pst ,(select psno from productsize where pno = "+pno+"  and psize = '"+psize+"') sub"
+					+ "	where pst.psno = sub.psno and pcolor ='"+pcolor+"'),"
+					+ "	"+mno+""
+					+ " );";
+			
+			try {
+				ps = con.prepareStatement(sql);
+				ps.executeUpdate(); return true;
+			} catch (Exception e) {System.out.println(e);
+			}return false; 
+		}
+		//12. 회원번호의 모든 장바구니 호출
+		public ArrayList<CartDto>getCart(int mno){
+			ArrayList<CartDto>list = new ArrayList<>();
+			String sql = "select"
+					+ "	 c.cartno, c.pstno , "
+					+ "     p.pname ,  p.pimg , "
+					+ "     p.pprice , p.pdiscount  , "
+					+ "     pst.pcolor ,  ps.psize , "
+					+ "     c.amount "
+					+ " from "
+					+ " cart c natural join "
+					+ " productstock pst natural join "
+					+ " productsize ps natural join "
+					+ " product p "
+					+ " where c.mno = "+mno;
+			try {
+				ps = con.prepareStatement(sql);
+				ps.executeQuery();
+				while(rs.next()) {
+					CartDto  cartDto = new CartDto(rs.getInt(1), rs.getInt(2), rs.getString(3),rs.getString(4), rs.getInt(5), rs.getFloat(6), rs.getString(7), rs.getString(8), rs.getInt(9));
+					list.add(cartDto);
+					return list;
+				}
+			} catch (Exception e) {
+				System.out.println(e);}return list;
+		}
+		
 }	
 

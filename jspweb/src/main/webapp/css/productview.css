@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'FUNFLOWSURVIVORKR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/FUNFLOWSURVIVORKR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img{width: 100%;}
+
+
+.infobox{
+	border-top:solid 1px black;
+	margin-left: 3%;  
+}
+
+.pname{
+	margin-top: 5%;
+ font-family: 'Humanbumsuk';
+}
+.pcomment{ /* 제품설명 */
+	font-size: 8px;
+}
+.pricebox{ 
+	margin: 5% 0%;
+}
+.pdiscount{ /* 할인율 */
+	 font-family: 'Humanbumsuk';
+	color: blue; font-size: 25px;
+	padding-right: 3%;
+}
+.pprice{ /* 원가 */
+	text-decoration:  line-through; /* 중간실선 */
+	color: #999999;	
+	padding-right: 3%;
+}
+.psale{ /* 할인적용 판매가 */
+ font-family: 'Humanbumsuk';
+	 font-size: 25px;
+}
+.info_t{
+	margin: 5% 0%;
+	font-size: 15px;
+}
+select{
+	width: 90%;
+	height: 35px;
+	border: none;
+}
+.select_t{
+	margin: 5% 0%;
+}
+.amount_btn{
+	display: block;
+	background-color: white;
+	font-size: 5px;
+	padding: 0px 7px;
+	border: 1px #999999 solid;
+}
+.cancel_btn{
+	background-color: white;
+	font-size: 10px;
+	padding: 5px;
+	border: none;
+}
+
+.pointbox{font-size: 8px ; color: #999999;}
+
+
+
+.totalprice{
+	text-align:right;
+	font-size : 20px;
+	 font-family: 'FUNFLOWSURVIVORKR';
+}
+.btnbox{
+	margin: 5% 0%;
+	font-size: 15px;
+}
+.btnbox button{
+	background-color: white;
+	border: 1px #999999 solid;
+	width: 30%;
+	padding: 13px 10px;
+	margin-right: 2%; 
+}
+
+#btn1{
+	background-color: black;
+	color: white;
+}
+#btn3{
+	background-color : gray;
+	color: white;
+}
