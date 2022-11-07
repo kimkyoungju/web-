@@ -4,7 +4,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import controller.admin.regist;
+import controller.board.bdelete;
 import model.Dto.CartDto;
+import model.Dto.orderDto;
 import model.Dto.pcatagoryDto;
 import model.Dto.productDto;
 import model.Dto.stockDto;
@@ -265,6 +267,42 @@ public class productDao extends Dao {
 				}
 			} catch (Exception e) {System.out.println(e+"오류1");}
 			return list;
+		}
+		//13.
+		public boolean setorder(ArrayList<orderDto>list) {
+			
+			//1.주문 레코드 생성
+			String sql = "insert into porder(oname,ophone,oaddress,orequest,mno) values(?,?,?,?,?)";
+			try {
+				ps = con.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS);
+				System.out.println( list.get(1).getOname());
+				ps.setString(1, list.get(0).getOname());
+				ps.setString(2, list.get(0).getOphone());
+				ps.setString(3, list.get(0).getOaddress());
+				ps.setString(4, list.get(0).getOrequest());
+				ps.setInt(5, list.get(0).getMno());
+				ps.executeUpdate();
+				rs = ps.getGeneratedKeys(); 
+				 while(rs.next()){ 
+					 int ono = rs.getInt(1);
+					 System.out.println(ono);
+					 sql = "insert into porderdetail(odamount ,odprice ,odactive ,pstno,ono) value(?,?,?,?,?)";
+					 try {
+						 for(int i = 0 ; i<list.size(); i++) {
+						 ps = con.prepareStatement(sql);
+						 ps.setInt(1, list.get(i).getOdamount());
+						 ps.setInt(2, list.get(i).getOdprice());
+						 ps.setInt(3, list.get(i).getOdactive());
+						 ps.setInt(4, list.get(i).getPstno());
+						 ps.setInt(5, ono);
+						 ps.executeUpdate();
+						 }
+						return true;
+					 } catch (Exception e) {System.out.println(e+"멀까");}return false;}
+				 } catch (Exception e) {
+				System.out.println(e+"오류13");
+			}
+			return false;
 		}
 		
 }	
