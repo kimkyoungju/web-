@@ -70,14 +70,14 @@
 			 <li><a class="nav-link" href="#">케이스</a></li>
 			 <li><a class="nav-link" href="#">에어팟</a></li>
 			 <li><a class="nav-link" href="#">EVENT</a></li>
-			 <li><a  class="nav-link" href="/jspweb/baord/api.jsp">공공데이터</a></li>
+			 <li><a  class="nav-link" href="/jspweb/board/api.jsp">공공데이터</a></li>
 			 <li><a class="nav-link" href="/jspweb/board/chatting.jsp">채팅방</a></li>
 			 	<li class="searchbox">
 			 		<span>
 				 		<input>
 					 	<i class="fas fa-search"></i>
 					 </span>
-					 		<i class="fas fa-shopping-cart"></i>
+					 	<a href="/jspweb/js/product/cart.jsp"><i class="fas fa-shopping-cart"></i></a>
 			 	</li>
 			 
 			 

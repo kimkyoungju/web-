@@ -119,9 +119,15 @@ btnlike.addEventListener('click' , (e)=>{
 		type : "post",
 		data : {"data" :JSON.stringify(productlist) , "pno" : pno}, 
 			//JSON.stringify(객체) : 객체타입 -> 문자열 타입
-		success : re=>{alert(re)}
+		success : re=>{
+		if(re=='true'){
+			productlist = []
+			if(confirm("장바구니에 담았습니다. 장바구니 페이지로 이동할까요?")){
+			location.href="/jspweb/js/product/cart.jsp"
+			}
+		}else{alert("장바구니 담기 실패.")}
 		
-		
+		}	
 	})
 	
 });
@@ -166,7 +172,7 @@ btnlike.addEventListener('click' , (e)=>{
 		}else{ // 할인이 있을때 
 		 psale = product.pprice -( product.pprice / product.pdiscount )
 
-			phtml += '<span class="pdiscount">'+Math.round(product.pdiscount *100)+'</span>'+
+			phtml += '<span class="pdiscount">'+Math.round(product.pdiscount)+'%</span>'+
 						'<span class="pprice">'+(product.pprice.toLocaleString())+'원</span>'+
 						'<span class="psale">'+ psale.toLocaleString()+'원</span>'
 			

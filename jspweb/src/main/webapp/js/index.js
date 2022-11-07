@@ -27,7 +27,7 @@ $.ajax({
 							'					<div class="item_title">'+
 							'						'+json[i].pcomment+''+
 							'					</div>	<!-- 제품명 -->'+
-							'				'+json[i].pname+'	'+
+							'				'+json[i].pname+' '+
 							'					<div class="item_size"> [FREE] </div>'+
 							'					'+
 							'					<div class="item_price"> '+json[i].pprice.toLocaleString('ko-KR')+' 원 </div> <!-- 원가 -->'+
@@ -42,10 +42,7 @@ $.ajax({
 							'					<span class="badge rounded-pill text-bg-info"> 1+1 </span>'+
 							'				</div>'+
 							'			</div>';
-//			if(jsom[i].pdiscount){
-//				pprice * pdiscount.toLocaleString('ko-KR')
-//			}
-			}	
+		}	
 			
 		
 		document.querySelector(".itemlist").innerHTML += html;

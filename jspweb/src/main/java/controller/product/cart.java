@@ -1,6 +1,8 @@
 package controller.product;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,7 @@ import org.json.simple.parser.JSONParser;
 
 import model.Dao.MemberDao;
 import model.Dao.productDao;
+import model.Dto.CartDto;
 
 /**
  * Servlet implementation class cart
@@ -33,8 +36,36 @@ public class cart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	//1. 요청
+	int mno = MemberDao.getInstance().getMno((String)request.getSession().getAttribute("mid"));
+	//2.db처리
+	ArrayList<CartDto>list =  new productDao().getCart(mno);	
+	
+	//형변환
+	
+	JSONArray array = new JSONArray();
+	for(CartDto dto : list) {
+		JSONObject object = new JSONObject();
+		object.put("cartno",dto.getCartno() );
+		object.put("pstno",dto.getPstno() );
+		object.put("pname",dto.getPname() );
+		object.put("pimg",dto.getPimg() );
+		object.put("pprice",dto.getPprice() );
+		object.put("pdiscount",dto.getPdiscount() );
+		object.put("pcolor",dto.getPcolor() );
+		object.put("psize",dto.getPsize() );
+		object.put("amount",dto.getAmount() );
+		array.add(object);
+		System.out.println(array);
+	
+	}
+	//3. 응답
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print(array);
+		
+	
+	
+	
 	}
 
 	/**
